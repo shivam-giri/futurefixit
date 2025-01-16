@@ -168,6 +168,23 @@
       <p class="p-2">Deliverd by : <a class="text-blue-300 underline" href="https://shivam-giri-resume.netlify.app/">Shivam Giri</a></p>
     </div>
   </footer>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileMenuButton = document.querySelector("[aria-controls='mobile-menu']");
+      const mobileMenu = document.getElementById("mobile-menu");
+  
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", function () {
+          const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
+          mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
+          if (isExpanded) {
+            mobileMenu.classList.add("hidden");
+          } else {
+            mobileMenu.classList.remove("hidden");
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
