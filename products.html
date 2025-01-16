@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - Future Fix</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./assets//og-logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Clip path for hexagon shape */
+    .clip-hexagon {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    .circle {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(0deg, rgba(0, 255, 217, 0.4) 50%, transparent 0%), 
+              linear-gradient(45deg, rgba(0, 128, 0, 0.4) 50%, transparent 0%), 
+              linear-gradient(90deg, rgba(11, 255, 0, 0.4) 50%, transparent 0%), 
+              linear-gradient(135deg, pink 50%, transparent 0%), 
+              linear-gradient(180deg, brown 50%, transparent 0%),
+              linear-gradient(225deg, yellow 50%, transparent 0%),
+              linear-gradient(270deg, red 50%, transparent 0%);
+  position: relative;
+  overflow: hidden;
+}
+  </style>
+</head>
+<body class="bg-white">
+
+<header id="header" class="fixed top-0 left-0 w-full z-10">
+    <nav class="p-4 backdrop-blur-md bg-white/50">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-auto items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <a href="./index.html" class="flex shrink-0 items-center">
+                <img class="h-20 w-auto" src="./assets/logo.png" alt="Your Company">
+            </a>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div class="hidden sm:ml-6 sm:flex items-center">
+                <div class="flex items-center space-x-1 md:space-x-6">
+                <a href="./about-us.html" class="rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700 hover:bg-gray-700 hover:text-white">About</a>
+                <a href="javascript:;" class="rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium bg-gray-700 text-white">Products</a>
+                <a href="./tools.html" class="rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Tools</a>
+                <a href="./contact-us.html" class="rounded-md px-4 py-3 text-lg font-medium text-white bg-red-700 hover:bg-gray-700 hover:text-white">Contact Us</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+                <a href="./about-us.html" class="block rounded-md bg-gray-900 px-3 py-2 md:px-2 md:py-1 text-base font-medium text-white" aria-current="page">About us</a>
+                <a href="javascript:;" class="block rounded-md bg-gray-900 px-3 py-2 md:px-2 md:py-1 text-base font-medium text-white">Products</a>
+                <a href="./tools.html" class="block rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Tools</a>
+                <a href="./contact-us.html" class="block rounded-md px-4 py-3 text-center text-lg font-medium text-white bg-red-700 hover:bg-gray-700 hover:text-white">Contact Us</a>
+            </div>
+        </div>
+       
+    </nav>
+    
+</header>
+
+<!-- banner  -->
+  <div class="relative isolate overflow-hidden bg-gray-900 py-24 h-[80vh]">
+    <img src="./assets/product-banner.png" alt="" class="absolute inset-0 -z-10 size-full object-cover object-right">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 h-full flex items-center">
+      <div class="mt-20">
+        <div class="mx-auto max-w-3xl lg:mx-0 bg-white/70 lg:bg-transparent backdrop-blur-sm lg:bg-gradient-to-r from-white p-4 rounded-xl">
+            <h2 class="text-6xl font-bold tracking-tight text-red-600 sm:text-8xl bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-black leading-normal-1" style="line-height: normal;"><i>Our Products</i></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- banner  -->
+
+<section class="mt-16">
+    <p class="text-2xl p-10 max-w-7xl mx-auto text-center "><b>Future Fix</b> Industries Private Limited is a leading supplier of <b>high-quality construction products in India</b> and an ISO 9001:2015 certified company. Renowned for its innovative and durable solutions, the company offers a wide range of products, including tile adhesives, grouts, waterproofing solutions, and construction chemicals, designed to meet the diverse needs of modern construction. With a strong commitment to quality, sustainability, and customer satisfaction, Future Fix products are trusted by professionals for both residential and commercial projects. Explore our product range to experience unmatched performance and reliability, making every construction project efficient, durable, and long-lasting.</p>
+
+ <!-- product 1 -->
+  <div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/21.png" alt="Tile Adhesive Bag" class="w-full max-w-sm">
+        <img src="./assets/tools/tool-1.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Lite Series</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix Tile Adhesive</strong> is an eco-friendly, lightweight, polymer-modified, mineral-based ready-to-use adhesive for fixing small-size absorbent small ceramic tiles & vitrified in internal areas for renovation as well as fresh work. Future Fix LS-111 Adhesive is designed for doing small work with speed and ease. Suitable for internal use only.
+        </p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <p class="text-gray-600"><span class="bg-[#71716f] h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">20 Kg./40 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Wall, Floor, Interior Dry Area Work Tops</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per 15477-2019 Standard</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Tensile Adhesion (Dry Condition)</td>
+                <td class="border px-2 py-1">2 0.75 N/mm2</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Sheer Adhesion (Dry Condition)</td>
+                <td class="border px-2 py-1 ">21 N/mm2</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Coverage</td>
+                <td class="border px-2 py-1">Approx. 40-50 Sft. / 20 Kg. Bag Using 3 mm. Thick</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesive Thickness</td>
+                <td class="border px-2 py-1">3 To 6 mm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- product 1 -->
+ <!-- product 2 -->
+ <div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Lite Series +</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix </strong>Tile Adhesive Is An Eco Friendly, Light Weight, Polymer Modified, Mineral Based Ready To Use Adhesive For Fixing Small Size Absorbent Small Stone & Vitrified In Internal & Exterior Area For Renovation As Well As Fresh Work. Future Fix Ls-222 Designed For Doing Small Work With Speed And Ease. Suitable For Internal & Exterior.
+        </p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <p class="text-gray-600"><span class="bg-[#71716f] h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">20 Kg./40 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Wall, Floor, Interior & Exterior, Dry Area Work Tops</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per 15477-2019 Standard</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Tensile Adhesion (Dry Condition)</td>
+                <td class="border px-2 py-1">2 0.75 N/mm2</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Sheer Adhesion (Dry Condition)</td>
+                <td class="border px-2 py-1 ">21 N/mm2</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Coverage</td>
+                <td class="border px-2 py-1">Approx. 40-50 Sft. / 20 Kg. Bag Using 3 mm. Thick</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesive Thickness</td>
+                <td class="border px-2 py-1">3 To 6 mm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/20.png" alt="Tile Adhesive Bag" class="w-full max-w-sm">
+        <img src="./assets/tools/tool-2.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+    </div>
+  </div>
+<!-- product 2 -->
+<!-- product 3 -->
+  <div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/19.png" alt="Tile Adhesive Bag" class="w-full max-w-sm">
+        <img src="./assets/tools/tool-3.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Classic Series</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix </strong>An Eco Friendly, High Polymer Modified, Light Weight, Based On High-quality Minerals, Ready To Use Adhesive For Fixing Stone, Vitrified Tile In The Interior, Exterior And All Types Of Absorbent Ceramic, Porcelain, Glazed And Other Tile In The Interior & Exterior.
+        </p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-[#71716f] border-2 h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
+                <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">20 Kg./40 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Wall, Floor, Interior & Exterior, Dry Area Work Tops</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms 12004</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Packing</td>
+                <td class="border px-2 py-1">White 20 Kg./40 Kg.</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Tensile Adhesion</td>
+                <td class="border px-2 py-1">≥ 1 N/mm² (as Per EN 1348)</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesion After Heat Cycle</td>
+                <td class="border px-2 py-1">≥ 0.7 N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesion After Water Immersion</td>
+                <td class="border px-2 py-1">≥ 0.9 KN/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesion After Freeze/Thaw Cycle</td>
+                <td class="border px-2 py-1">20.65 KN/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Coverage</td>
+                <td class="border px-2 py-1">Approx. 40-50 Sft. / 20 Kg. Bag Using 3 mm. Thick</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesive Thickness</td>
+                <td class="border px-2 py-1">3 To 6 mm</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- product 3 -->
+
+<!-- product 4 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Premium Series</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix </strong>An Eco Friendly, High Polymer Modified, Light Weight, Based On High-quality Minerals, Ready To Use Adhesive For Fixing Stone, Vitrified Tile In The Interior, Exterior And All Types Of Absorbent Ceramic, Porcelain, Glazed And Other Tile In The Interior & Exterior.
+        </p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-[#71716f] border-2 h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
+                <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">20 Kg./40 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Wall, Floor, Interior & Exterior, Dry Area Work Tops</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms 12004</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Packing</td>
+                <td class="border px-2 py-1">White 20 Kg./40 Kg.</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Tensile Adhesion</td>
+                <td class="border px-2 py-1">Upt0 3N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesion After Heat Cycle</td>
+                <td class="border px-2 py-1">≥ 1 N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesion After Water Immersion</td>
+                <td class="border px-2 py-1">≥ 1 N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesion After Freeze/Thaw Cycle</td>
+                <td class="border px-2 py-1">≥ 1 N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Coverage</td>
+                <td class="border px-2 py-1">Approx. 40-50 Sft. / 20 Kg. Bag Using 2 mm. Thick</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesive Thickness</td>
+                <td class="border px-2 py-1">3 To 6 mm</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/18.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-4.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+    </div>
+  </div>
+<!-- product 4 -->
+
+<!-- product 5 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/18.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-5.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Advance Series</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix </strong>Advance Adhesive Is A Unique Eco-friendly, Very High Polymer Modified, Very High Flexible & Deformable Up To 2.5
+          Mm., Light Weight, Based On High Quality
+          Mineral, Ready To Use Adhesive For Fixing All Kind Of Large Size Ceramic & Vitrified Tiles, Stable Natural Stone, Slim Tiles Slab On Facade, In Heavy Duty Areas Including Commercial & Industrial Uses. Suitable For Internal & External
+        </p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-[#71716f] border-2 h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
+                <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">20 Kg./40 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Wall, Floor, Interior & Exterior, Dry Area Work Tops</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms 12004</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Packing</td>
+                <td class="border px-2 py-1">White 20 Kg./40 Kg.</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Tensile Adhesion</td>
+                <td class="border px-2 py-1">Upt0 3N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesion After Heat Cycle</td>
+                <td class="border px-2 py-1">≥ 1 N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesion After Water Immersion</td>
+                <td class="border px-2 py-1">≥ 1 N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesion After Freeze/Thaw Cycle</td>
+                <td class="border px-2 py-1">≥ 1 N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Coverage</td>
+                <td class="border px-2 py-1">Approx. 40-50 Sft. / 20 Kg. Bag Using 1.5 mm. Thick</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesive Thickness</td>
+                <td class="border px-2 py-1">3 To 6 mm</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- product 5 -->
+
+<!-- product 6 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">BLOCK FIX <span class="block text-gray-700 text-2xl">AAC Block Fix Adhesive</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix Block adhesive </strong>
+           is an Eco friendly, light weight, polymer modified, mineral based ready to use adhesive for fixing of all kind of AAC (Autoclaved Aerated Concrete) blocks, concrete blocks and other absorbent bricks. Suitable for internal & external.</p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-[#71716f] border-2 h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">40 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">
+                adhesive for fixing of all kind of AAC
+                (Autoclaved Aerated Concrete) blocks, concrete blocks
+                and other absorbent bricks. Suitable for internal & external.</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms 12004</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Tensile Adhesion(Porous Surface)</td>
+                <td class="border px-2 py-1">≥ 1 N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesion After Heat Cycle</td>
+                <td class="border px-2 py-1">≥ 0.5 N/mm²</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Coverage</td>
+                <td class="border px-2 py-1">Approx. 40-50 Sft. / 40 Kg. Bag Using 2-3 mm. Thick</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1 font-semibold">Adhesive Thickness</td>
+                <td class="border px-2 py-1">3 To 6 mm</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/7.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-6.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+    </div>
+  </div>
+<!-- product 6 -->
+
+
+<!-- product 7 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/17.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-7.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">SBR LATEX 900 <span class="block text-gray-700 text-2xl">Designed for waterproofing & repair</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix SBR </strong>Is A Unique Eco-friendly Polymer Liquid Based Synthetic Rubbers To Provide Excellent Compressive & Flexural Strength, High Adhesion To Cement Surfaces When Used As Slurry Coat And Also Act As Water Resistant Coating For Wet Areas. Suitable For Internal And External.
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">1 Ltr, 5 Ltr, 20 Ltr</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms 12004</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Mixing Ratio</td>
+                  <td class="border px-2 py-1">1:3, 1:4, 1:6 By Weight</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Strength (Mixed With Water)</td>
+                  <td class="border px-2 py-1">35 | 28 & 20 Mpa</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Strength (Mixed With SBR: Water 1:1)</td>
+                  <td class="border px-2 py-1">45 | 40 & 30 Mpa</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Coverage As A Slurry Bond Coat</td>
+                  <td class="border px-2 py-1">Approx. 27 To 30 Sqft./Kg. Adhesive Cement Of SBR Liquid</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Coverage As Waterproofing Coat</td>
+                  <td class="border px-2 py-1">Approx. 35 Sqft./Kg. Adhesive Cement Of SBR Liquid</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Coverage As Primer Bond Coat</td>
+                  <td class="border px-2 py-1">Approx. 15 To 20 Sqft./Kg. Adhesive Cement Of SBR Liquid</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Mixing Ratio As A Slurry Bond Coat</td>
+                  <td class="border px-2 py-1">1:1 (SBR: Water And Equal Adhesive Cement Base Binder)</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Mixing Ratio As Waterproofing Slurry</td>
+                  <td class="border px-2 py-1">1:2 (SBR: Cement Base Binder)</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Mixing Ratio As Primer Bond Coat</td>
+                  <td class="border px-2 py-1">No Dilution</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Mixing Ratio As Admix To Concrete, Mortar & Screed</td>
+                  <td class="border px-2 py-1">1:1 To 1:4 (SBR: Water) Based On Strength Needed</td>
+                </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- product 7 -->
+
+
+<!-- product 8 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">ADVANCE GROUT ADMIX <span class="block text-gray-700 text-2xl">Designed for Grout Strength</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Advance Grout Admix</strong><br/>Advance Grout Admix Is Specially Designed Latex Admix To Be Used With Sanded & Unsanded Grout.
+        </p>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+        <strong>Advantages </strong><br/>
+        ⚫ Colour-fastness, Flexibility, Compressive Strength<br/>
+        ⚫ Shock And Chemical Resistance <br/>
+        ⚫ Reduces Water Absorption Easy To Clean
+        </p>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+        <strong>Coverage : </strong>Varies By Application.
+        </p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">500ml, 1 Lit, 5 Ltr</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">It Improves The Performance Of Portland Cement Grouts For All Types Of Ceramic Tile, Brick, Marble, Natural Stone And Agglomerate Stone Installations.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/16.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-8.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+    </div>
+  </div>
+<!-- product 8 -->
+
+
+<!-- product 9-->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/15.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-9.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">2 COMPONENT EPOXY <span class="block text-gray-700 text-2xl">Designed for easy apply</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Advanced Technology Future Fix 2 Component</strong> Epoxy Grout Is Consisting of High-quality Transparent Glass Beads, Eco- friendly Resin & Hardeners And High-quality Stable Colour Pigment. The Future Fix 2 Component Epoxy Grout Provides Excellent
+Workability And Ease Of Work For The Diy Jobs And High-quality Joints Between Tiles & Stone. The Joints Are High Chemical, Stain & Abrasion Resistance. Future Fix 2 Component Epoxy Grout Doesn't Allow Water To Go Through And Can Be Used For Filling The Tile & Stone Joints Up To 15mm On The Floor & On The Wall.
+        </p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="circle border-2 h-12 w-12 rounded-full mr-3 flex"></span>23 Colours</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">1 Kg./4 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Filling The Tile & Stone Joints Upto 15 Mm On Floor & On Wall</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Compressive Strength</td>
+                  <td class="border px-2 py-1">&gt; 53 Mpa As Per En 13888</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Abrasion Resistance</td>
+                  <td class="border px-2 py-1">&lt;180 mm3 As Per En 12808-2</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Water Absorption After 240 Min</td>
+                  <td class="border px-2 py-1">&lt;0.03g As Per En 12808-5</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Porcelain Tiles / Concrete Tensile Strength</td>
+                  <td class="border px-2 py-1">≥ 3 N/m² 2.6 Mpa As Per En 1348m² (Using As Adhesive)</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Fungal & Bacterial Contamination</td>
+                  <td class="border px-2 py-1">NIL</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Mixing Ratio</td>
+                  <td class="border px-2 py-1">Part A-hardener: Part B-color Resin Paste: (1:15)</td>
+                </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- product 9 -->
+
+<!-- product 10 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">ADVANCE EPOXY GROUT <span class="block text-gray-700 text-2xl">Designed for Filling Tile Joints</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Advance Epoxy Grout</strong> 
+          is Consist Of High Quality Colour Quartz, Eco-Friendly Resin & Hardener. The Advance Epoxy Grout Provide Excellent High Quality Joints Between Tiles & Stone. The Joints Are High Chemical, Stain & Abrasion Resistance. Advance Epoxy Grout Does Not Allow Water To Go Through And Can Be Used For Filling The Tile & Stone Joints Upto 15mm On Floor & On Wall
+        </p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="circle border-2 h-12 w-12 rounded-full mr-3 flex"></span>23 Colours</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">1 Kg./5 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600"> Filling The Tile & Stone Joints 3 To 5 Mm On Floor & On Wall</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Compressive Strength</td>
+                  <td class="border px-2 py-1">≥ 58 Mpa < 165 Mm3</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Abrasion Resistance</td>
+                  <td class="border px-2 py-1">&lt;165 Mm3</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Water Absorption After 240 Min</td>
+                  <td class="border px-2 py-1">&lt;0.03g</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Porcelain Tiles / Concrete Tensile Strength</td>
+                  <td class="border px-2 py-1">≥3 N/mm2 (using As Adhesive)</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Fungal & Bacterial Contamination</td>
+                  <td class="border px-2 py-1">NIL</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Mixing Ratio</td>
+                  <td class="border px-2 py-1">Upto 15 mm. | Refer Grout Coverage Chart</td>
+                </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/14.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-10.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+    </div>
+  </div>
+<!-- product 10 -->
+
+
+<!-- product 11 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/13.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-11.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE GROUT ClASSIC <span class="block text-gray-700 text-2xl">Designed for Grouting</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Furture fix TILE GROUT</strong> 
+          is An Eco-friendly, Single Component, Polymer Modified, Very Fine & Smooth, Water & Abrasion Resistance, Based On High Quality Mineral, Ready To Use Polymer Grout For Filling The Joints Of Tiles & Stone Upto 3mm. Suitable For Internal & External.</p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="circle border-2 h-12 w-12 rounded-full mr-3 flex"></span>23 Colours</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">1 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600"> Filling The Tile & Stone Joints 3 To 5 mm On Floor & On Wall</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Compressive Strength</td>
+                  <td class="border px-2 py-1">≥15 N/mm2</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Flexural Strength </td>
+                  <td class="border px-2 py-1">≥3.5 N/mm2</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Abrasion Resistance</td>
+                  <td class="border px-2 py-1">&lt;2000 mm3</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Filling Of Joint</td>
+                  <td class="border px-2 py-1">Upto 3 mm</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Coverage</td>
+                  <td class="border px-2 py-1">Refer Grout Coverage Calculator</td>
+                </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- product 11 -->
+
+<!-- product 12 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE GROUT ADVANCE <span class="block text-gray-700 text-2xl">Designed for Grouting</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Furture fix TILE GROUT</strong> 
+          is An Eco-friendly, Single Component, Polymer Modified, Very Fine & Smooth, Water & Abrasion Resistance, Based On High Quality Mineral, Ready To Use Polymer Grout For Filling The Joints Of Tiles & Stone Upto 12mm. Suitable For Internal & External.</p>
+  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="circle border-2 h-12 w-12 rounded-full mr-3 flex"></span>23 Colours</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">1 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600"> Filling The Tile & Stone Joints 12mm On Floor & On Wall</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Compressive Strength</td>
+                  <td class="border px-2 py-1">≥25 N/mm2</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Flexural Strength </td>
+                  <td class="border px-2 py-1">≥3.5 N/mm2</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Abrasion Resistance</td>
+                  <td class="border px-2 py-1">&lt;1000 mm3</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Filling Of Joint</td>
+                  <td class="border px-2 py-1">Upto 12mm</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Coverage</td>
+                  <td class="border px-2 py-1">Refer Grout Coverage Chart</td>
+                </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/12.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-12.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+    </div>
+  </div>
+<!-- product 12 -->
+
+<!-- product 13 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/6.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-13.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE GROUT ADVANCE <span class="block text-gray-700 text-2xl">Designed for Grouting</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix Ultimate PU Adhesive</strong> is A Unique Eco- friendly,very High Flexible (elongation Upto 30 Mm), Two Part Polyurethane System Based On High Quality Minerals For Doing Work On Flexible Surfaces Such As Metal, Wood, Dry-wall, External Facade And Areas Under Heavy Vibration Such As
+Airport & Metro Station Including Heavy Duty
+Industrial Floor. Suitable To Fix All Type Of Ceramic & Vitrified Slab, Natural & Agglomerated Stone Slab & All Kind Of Mosaic Made In Ceramic, Glass, Wood & Metal. Suitable For Internal & External.
+        </p>  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">1 Kg. / 4 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Fix All Kind Of Mosaic Made In Ceramic, Glass, Wood & Metal. Suitable For Internal & External</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms 12004</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Initial Sheer Adhesion</td>
+                  <td class="border px-2 py-1">≥ 4.5 N/mm²</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Sheer Adhesion After Water Immersion</td>
+                  <td class="border px-2 py-1">≥ 4 N/mm²</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Sheer Adhesion After Thermal Shock</td>
+                  <td class="border px-2 py-1">≥ 4 N/mm²</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Tensile Adhesion @ 7 Days</td>
+                  <td class="border px-2 py-1">≥ 3 N/mm²</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Tensile Adhesion After Freeze/Thaw</td>
+                  <td class="border px-2 py-1">≥ 2.75 N/mm²</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Transverse Deformation | Elongation After Full Strength</td>
+                  <td class="border px-2 py-1">≥ 10.5mm | ≥ 30%</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Coverage | Adhesive Thickness</td>
+                  <td class="border px-2 py-1">Approx. 7 To 8 Sqft./Kg. Using 1.5mm Thick. | Min 1.5mm.</td>
+                </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- product 13 -->
+
+<!-- product 14 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">GLITTERPOXY <span class="block text-gray-700 text-2xl">Hight Shine Glitterpoxy, Designed for Sparking Joint Filling</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Advance Technology Future Fix Glitterpoxy Grout</strong> is Consisting Of High-quality Transparent Glass Beads, Eco-friendly Resin & Hardener & Extra Shiny Premium Hexagonal Glitter Beads. The Glitterpoxy Grout Provides Excellent Workability And Ease Of Work For
+The Diy Job And High-quality Shining In Gold, Silver & Copper Shades Between Tiles & Stone Joints. Future Fix Grout Doesn't Allow Water To Go Through And Can Be Used For Filling The Tile & Stone Joints Up To 10 Mm On Floors & On Walls. Best For Interior Use. External Under Shade.
+        </p>  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-yellow-500 border-2 h-12 w-12 rounded-full mr-3 flex"></span>Gold</p>
+                <p class="text-gray-600"><span class="bg-gray-300 border-2 h-12 w-12 rounded-full mr-3 flex"></span>Silver</p>
+                <p class="text-gray-600"><span class="bg-orange-700 border-2 h-12 w-12 rounded-full mr-3 flex"></span>Copper</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">1 Kg. / 4 Kg.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Filling the Tile & Stone Joints 15mm on Floor & on Wall</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <h3 class="text-gray-700 font-medium text-lg">Final Strength As Per European Norms</h3>
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-2 py-1 font-semibold">Compressive Strength</td>
+                    <td class="border px-2 py-1">54 Mpa As Per En 13888</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-2 py-1 font-semibold">Abrasion Resistance</td>
+                    <td class="border px-2 py-1">&lt;162 Mm3 As Per En 12808-2</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-2 py-1 font-semibold">Water Absorption After 240 Min</td>
+                    <td class="border px-2 py-1">&lt;0.03g As Per En 12808-5</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-2 py-1 font-semibold">Porcelain Tiles/concrete Tensile Strength</td>
+                    <td class="border px-2 py-1">≥ 3 Mpa As Per En 1348</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-2 py-1 font-semibold">Fungal & Bacterial Contamination | Coverage</td>
+                    <td class="border px-2 py-1">Nil | Refer Grout Coverage Chart</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-2 py-1 font-semibold">Mixing Ratio</td>
+                    <td class="border px-2 py-1">Mixing Ratio: Part A-hardener: Part B-color Resin Paste: (1:15)</td>
+                  </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/11.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-14.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+    </div>
+  </div>
+<!-- product 14 -->
+
+<!-- product 15 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/10.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-15.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">HIGHT SHINE GLITTER <span class="block text-gray-700 text-2xl">Designed for Sparking Shining</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix High Shine Gliter</strong> is A Eco-friendly, High Quality, Durable, Chemical Resistance Glitter Powder Based On Polyester Resin To Use Along With Epoxy Grout. The Mix Product Produce Very High Shining Grout Surface In Gold, Silver & Copper Shade. Suitable For Internal.
+        </p>  
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-yellow-500 border-2 h-12 w-12 rounded-full mr-3 flex"></span>Gold</p>
+                <p class="text-gray-600"><span class="bg-gray-300 border-2 h-12 w-12 rounded-full mr-3 flex"></span>Silver</p>
+                <p class="text-gray-600"><span class="bg-orange-700 border-2 h-12 w-12 rounded-full mr-3 flex"></span>Copper</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">100 gm bottle</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">High Shine glitter can use with epoxy Grout</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Shape of Glitter</td>
+                  <td class="border px-2 py-1">Hexagonal</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Nature</td>
+                  <td class="border px-2 py-1">Dry colour glitter powder</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Size of Glitter Particle</td>
+                  <td class="border px-2 py-1">0.25 mm</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Resistance to Chemical</td>
+                  <td class="border px-2 py-1">Very good</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Coverage</td>
+                  <td class="border px-2 py-1">As per type of Epoxy Grout mixed with</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Mixing Ratio</td>
+                  <td class="border px-2 py-1">Approx. 1% or more by weight for Future Fix Epoxy Grout | Approx. 3% or more by weight for Future Fix Epoxy grout and for 2 Component Epoxy</td>
+                </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- product 15 -->
+
+<!-- product 16 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE SPACER <span class="block text-gray-700 text-2xl">Spacer for the Tile & Stone joint</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+            Made Of High Quality Plastic In Pure White Colour And Of Different Cross Sizes. Most Suitable To Create The Joints Between Tile & Stone While Fixing On Floor And Wall. Can Be Used Between Four Tiles As Insertion Or In Vertical Form Between To Tiles To Remove Later For Reuse. Suitable For Floor And Wall Joints Between Tiles And Stone.
+        </p> 
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">100 Nos.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Suitable For Floor And Wall Joints Between Tiles And Stone</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Product Type</td>
+                  <td class="border px-2 py-1">High Quality Flexible Plastic Material.</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Sizes</td>
+                  <td class="border px-2 py-1">2 mm. | 13 mm. | 5 mm. | 8 mm. | & 10 mm.</td>
+                </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/2.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-16.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+    </div>
+  </div>
+<!-- product 16 -->
+
+<!-- product 17 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/3.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-17.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">PREMIUM TILE CLEAN <span class="block text-gray-700 text-2xl">Designed for tile cleaning</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix Tile Clean</strong> is An Ideal Powerful Tile Clean For Daily And Often Use. It Is Based On A High-quality Formulation To Clean The Surface Of Tiles, Sandstone Or Concrete To Remove The Dirt, Soil, Salt Deposits, Mud, Different Stain & Other Particles Completely. Suitable For Internal & External Areas On The Floor And Walls.
+        </p> 
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>Transparent</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">1 Ltr. | 5 Ltr.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Suitable For internal and external area on the floor and walls.</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Dilution with Water</td>
+                  <td class="border px-2 py-1">The Cleaner Can Be Diluted From 1:1 To 1:10 Or More With Normal Water 1:1 Or 1:10</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Mixing Ratio</td>
+                  <td class="border px-2 py-1">1:1 or 1:10</td>
+                </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- product 17 -->
+
+<!-- product 18 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">ADVANCE TILE CLEAN <span class="block text-gray-700 text-2xl">Designed for Stone cleaning</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+          <strong>Future Fix Tile Clean</strong> is An Ideal Powerful Tile Clean For Daily And Often Use. It Is Based On A High-quality Formulation To Clean The Surface Of Tiles, Sandstone Or Concrete To Remove The Dirt, Soil, Salt Deposits, Mud, Different Stain & Other Particles Completely. Suitable For Internal & External Areas On The Floor And Walls.
+        </p> 
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>Transparent</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">1 Ltr. | 5 Ltr.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Suitable For internal and external area on the floor and walls.</p>
+          </div>
+        </div>
+  
+        <div class="mt-6">
+          <table class="w-full mt-2 text-sm text-left text-gray-900 text-xl"> 
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border px-2 py-1">Property</th>
+                <th class="border px-2 py-1">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Dilution with Water</td>
+                  <td class="border px-2 py-1">The Cleaner Can Be Diluted From 1:1 To 1:10 Or More With Normal Water 1:1 Or 1:10</td>
+                </tr>
+                <tr>
+                  <td class="border px-2 py-1 font-semibold">Mixing Ratio</td>
+                  <td class="border px-2 py-1">1:1 or 1:10</td>
+                </tr>
+              </tbody>
+          </table>
+          
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/3.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-18.png" alt="Tile Adhesive tool" class="w-full max-w-xs" />
+      </div>
+    </div>
+  </div>
+<!-- product 18 -->
+
+<!-- product 19 -->
+<div class="border-b-2 border-red-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
+      <div class="flex flex-col justify-center items-center">
+        <img src="./assets/wall-putty.png" alt="Tile Adhesive Bag" class="w-full max-w-md">
+        <img src="./assets/tools/tool-19.png" alt="Tile Adhesive tool" class="w-full max-w-xs rounded-full" />
+      </div>
+      <div class="lg:col-span-2 p-3">
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">WALL PUTTY <span class="block text-gray-700 text-2xl">Water proof</span></h2>
+        <p class="mt-4 text-gray-600 leading-relaxed text-xl">
+            It is very important and essential that the application area surface is pre-wet properly before the application of "Future Fix Wall Putty" during application process. This ensure higher bonding, strenght, easy workability and higher coverage within the surface.
+            Generally the cause of efflorescence on the wall surface is due to brick masonry and the quality of bricks, sand and water. If the effect of efflorescence is very high on the brick masonry then proper care should be taken to control the efflorescence. The efflorescence on brick masonry if allowed to exist which will impair the bonding of the "Future Fix Wall Putty" as is with any other
+        </p> 
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
+          <div>
+            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+            <div class="flex">
+                <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>Transparent</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Packing</h3>
+            <p class="text-gray-600">20 / 40 Ltr.</p>
+          </div>
+          <div>
+            <h3 class="text-gray-700 font-medium">Application Area</h3>
+            <p class="text-gray-600">Perfct putty for Interior and Exterior</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- product 19 -->
+
+</section>
+<footer id="footer">
+    <div class="bg-red-600 h-60" style="clip-path: polygon(60% 20%, 60% 60%, 60% 60%, 0 100%, 0 60%);margin-bottom: -180px;"></div>
+    <div class="bg-gray-200 p-10 pt-40" style="clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0 100%);">
+    <div class="max-w-7xl mx-auto flex flex-wrap">  
+      <div class="w-100 md:w-1/2 lg:w-2/3 p-4 content-end">  
+        <img src="./assets/22.png" alt="Full Logo" class="max-w-60 mb-4 w-full" />
+        <p class="text-red-600 text-2xl font-semibold">Future Fixit Industries Private Limited</p>
+        <p class="text-xl">Bambori Ratlam, Madhya Pradesh, India - 457 001</p>
+        <p class="text-xl">Call: <b><a class="underline" title="Contact Us" href="tel:+918989895919">+91 89898 95919</a></b></p>
+      </div>
+      <div class="w-100 md:w-1/2 lg:w-1/3 sm:p-4 p-2 flex">
+        <img src="./assets/make-in-india.png" class="w-1/2 object-contain p-4" />
+        <img src="./assets/bharat.png" class="w-1/2 object-contain p-4" />
+      </div>
+    </div>
+  </div>
+
+    <div class="bg-gray-800 text-white text-center p-4 flex flex-wrap justify-between">
+      <p class="p-2">&copy; 2025 Future Fixit Industries Pvt. Ltd. All rights reserved.</p>
+      <p class="p-2">Deliverd by : <a class="text-blue-300 underline" href="https://shivam-giri-resume.netlify.app/">Shivam Giri</a></p>
+    </div>
+  </footer>
+</body>
+</html>
