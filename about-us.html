@@ -29,7 +29,7 @@
     }
   </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans antialiased">
 
 <header id="header" class="fixed top-0 left-0 w-full z-10">
     <nav class="p-4 backdrop-blur-md bg-white/50">
@@ -111,7 +111,7 @@
             alt="Founder & CEO"
             />
             <h3 class="text-center text-2xl font-semibold text-red-600">Founder & CEO</h3>
-            <h4 class="text-center text-xl font-bold text-gray-600">Vasudev Pandey</h4>
+            <h4 class="text-center text-xl font-bold text-gray-600">Vasudev Patidar</h4>
             <p class="text-gray-600 text-lg mt-4 leading-relaxed">
             Future Fix Industries Private Limited is a leading manufacturer of advanced adhesives, grouts, cements, wall putty, waterproofing chemicals, and tile and stone cleaners in India. The company was founded by Vasudev Pandey with a vision to redefine the modern Indian industrial revolution. Future Fix’s private limited commitment to innovation, research, and development has led to the creation of truly unique products with exceptional global impact.
             </p>
@@ -221,29 +221,38 @@
         </div>
     </div>
     </section>
+
     <footer id="footer">
-        <div class="bg-red-600 h-60" style="clip-path: polygon(60% 20%, 60% 60%, 60% 60%, 0 100%, 0 60%);margin-bottom: -180px;"></div>
-        <div class="bg-gray-200 p-10 pt-40" style="clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0 100%);">
-        <div class="max-w-7xl mx-auto flex flex-wrap">  
-          <div class="w-100 md:w-1/2 lg:w-2/3 p-4 content-end">  
-            <img src="./assets/22.png" alt="Full Logo" class="max-w-60 mb-4 w-full" />
-            <p class="text-red-600 text-2xl font-semibold">Future Fixit Industries Private Limited</p>
-            <p class="text-xl">Bambori Ratlam, Madhya Pradesh, India - 457 001</p>
-            <p class="text-xl">Call: <b><a class="underline" title="Contact Us" href="tel:+918989895919">+91 89898 95919</a></b></p>
+      <div class="bg-red-600 h-60" style="clip-path: polygon(60% 20%, 60% 60%, 60% 60%, 0 100%, 0 60%);margin-bottom: -180px;"></div>
+      <div class="bg-gray-200 p-10 pt-40" style="clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0 100%);">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center">  
+        <div class="w-full text-center md:text-left md:w-1/2 p-4">  
+          <img src="./assets/22.png" alt="Full Logo" class="max-w-44 md:max-w-60 mb-4 w-full mx-auto md:ml-0" />
+          <p class="text-red-600 text-2xl font-semibold">Future Fixit Industries Private Limited</p>
+          <p class="text-xl">Bambori Ratlam, Madhya Pradesh, <br/>India - 457 001</p>
+          <p class="text-xl">Call: <b><a class="underline" title="Contact Us" href="tel:+918989895919">+91 89898 95919</a></b></p>
+        </div>
+        <div class="w-full text-center md:text-left md:w-1/4 md:border-none border-t-2 border-b-2 pb-4 pt-2 border-red-600">
+          <p class="text-xl font-semibold mb-3">Connect Us On:</p>
+          <div class="flex items-center justify-center md:justify-start">
+            <a href="https://api.whatsapp.com/send?phone=918989895919" title="Connect on Whatsapp"><img src="./assets/icons8-whatsapp-160.png" class="w-10 mr-2"/></a>
+            <a href="https://www.instagram.com/future_fix_it?igsh=YnJ3amI4eHUyOWlv" title="Connect on Instagram"><img src="./assets/instagram_2111463.png" class="w-8" /></a>
           </div>
-          <div class="w-100 md:w-1/2 lg:w-1/3 sm:p-4 p-2 flex">
-            <img src="./assets/make-in-india.png" class="w-1/2 object-contain p-4" />
-            <img src="./assets/bharat.png" class="w-1/2 object-contain p-4" />
-          </div>
+        </div>
+        <div class="w-full md:w-1/4 p-4 md:p-1 flex flex-wrap">
+          <img src="./assets/make-in-india.png" class="object-contain p-4 md:p-2 w-1/2" />
+          <img src="./assets/bharat.png" class="object-contain p-4 md:p-2 w-1/2" />
         </div>
       </div>
+    </div>
+  
+      <div class="bg-gray-800 text-white text-center p-4 flex flex-wrap justify-between">
+        <p class="p-2">&copy; 2025 Future Fixit Industries Pvt. Ltd. All rights reserved.</p>
+        <p class="p-2">Deliverd by : <a class="text-blue-300 underline" target="_blank" title="Open Developer Profile" href="https://shivam-giri-resume.netlify.app/">Shivam Giri</a></p>
+      </div>
+    </footer>
     
-        <div class="bg-gray-800 text-white text-center p-4 flex flex-wrap justify-between">
-          <p class="p-2">&copy; 2025 Future Fixit Industries Pvt. Ltd. All rights reserved.</p>
-          <p class="p-2">Deliverd by : <a class="text-blue-300 underline" href="https://shivam-giri-resume.netlify.app/">Shivam Giri</a></p>
-        </div>
-      </footer>
-      <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
           const mobileMenuButton = document.querySelector("[aria-controls='mobile-menu']");
           const mobileMenu = document.getElementById("mobile-menu");
