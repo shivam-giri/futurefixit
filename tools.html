@@ -7,9 +7,23 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Tools - Future Fixit</title>
   <link rel="shortcut icon" type="image/x-icon" href="./assets//og-logo.png" />
+  <style>
+    #mobile-menu {
+      transition: 0.4s all ease-in-out;
+      position: absolute;
+      width: 100%;
+    }
+    .menu-slide-out{
+    left: -100%;
+    }
+    .menu-slide-in{
+      left: 0;
+      transition: 0.4s all ease-in-out;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-100 font-sans antialiased">
+<body class="bg-white font-sans antialiased">
   <header id="header" class="fixed top-0 left-0 w-full z-10">
     <nav class="p-4 backdrop-blur-md bg-white/50">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -19,17 +33,17 @@
             <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
               <span class="absolute -inset-0.5"></span>
               <span class="sr-only">Open main menu</span>
-              <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true" data-slot="icon">
+              <svg id="menu-icon" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
-              <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true" data-slot="icon">
+              <svg id="close-icon" class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <a href="./index.html" class="flex shrink-0 items-center">
-              <img class="h-20 w-auto" src="./assets/logo.png" alt="Your Company">
+              <img class="h-14 md:h-20 w-auto" src="./assets/logo.png" alt="Your Company">
             </a>
           </div>
           <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -46,7 +60,7 @@
       </div>
     
       <!-- Mobile menu, show/hide based on menu state. -->
-      <div class="sm:hidden hidden" id="mobile-menu">
+      <div id="mobile-menu" class="menu-slide-out backdrop-blur-md bg-white/70 mt-4 p-4 shadow-xl">
         <div class="space-y-1 px-2 pb-3 pt-2">
           <a href="./about-us.html" class="block rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700">About</a>
           <a href="./products.html" class="block rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700">Products</a>
@@ -79,107 +93,139 @@
     </div>
    </section>
 
-<div class="max-w-7xl mx-auto p-4 my-12 bg-white rounded-md shadow-md">
-    <div class="flex flex-wrap justify-center">
-        <div class="w-full md:w-1/3">
-            <img src="./assets/25.png" class="w-full h-full" />
+   <div class="max-w-7xl mx-auto p-6 my-12 bg-gradient-to-r from-blue-200 via-green-200 to-blue-200 rounded-lg shadow-xl">
+    <div class="flex flex-wrap justify-center items-center">
+        <!-- Image Section -->
+        <div class="w-full md:w-1/2 p-4">
+            <img src="./assets/25.png" class="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
         </div>
-        <div class="p-4 w-full md:w-2/3">
-            <h2 class="text-3xl font-bold mb-4 bg-gray-100 p-2">NOTCH TROWEL</h2>
-            <p class="text-xl mb-4">Made From High Quality Steel And Different Size Of Notches Provide Different Thickness Of Adhesive As Per Requirement. Most Suitable For Application Of All Type Of Tile And Stone Adhesive. Provide Perfect Desire Thickness Of Adhesive On All Surfaces And Can Be Used On All Surfaces. Suitable For Wall & Floor Application.</p>
-            <ul class="list-disc ml-4">
-                <li class="mb-2 text-lg"><strong>Product</strong>: High Quality SS Material.</li>
-                <li class="mb-2 text-lg"><strong>Plate Thickness</strong>: 2 mm.</li>
-                <li class="mb-2 text-lg"><strong>Size</strong>: 3 mm. Notch For Glass Mosaic Fixing | 6 mm. & 10 mm.</li>
-                <li class="mb-2 text-lg"><strong>Packaging</strong>: 1 No.</li>
-                <li><strong>Colour</strong>: Silver</li>
+        <!-- Product Details Section -->
+        <div class="w-full md:w-1/2 p-6">
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-4 bg-gray-100 p-4 rounded-md shadow-md">NOTCH TROWEL</h2>
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Made from high-quality steel, this trowel offers different notch sizes to control the thickness of adhesive. It is perfect for tile and stone adhesive applications, providing a consistent finish on all surfaces. Suitable for both wall and floor applications.</p>
+            <ul class="list-disc ml-4 text-gray-700">
+                <li class="mb-3 text-lg"><strong class="font-semibold text-gray-800">Material</strong>: Premium Stainless Steel</li>
+                <li class="mb-3 text-lg"><strong class="font-semibold text-gray-800">Plate Thickness</strong>: 2 mm</li>
+                <li class="mb-3 text-lg"><strong class="font-semibold text-gray-800">Notch Sizes</strong>: 3 mm (Glass Mosaic Fixing), 6 mm & 10 mm</li>
+                <li class="mb-3 text-lg"><strong class="font-semibold text-gray-800">Packaging</strong>: 1 Piece</li>
+                <li class="text-lg"><strong class="font-semibold text-gray-800">Color</strong>: Silver</li>
             </ul>
         </div>
     </div>
 </div>
 
-<div class="max-w-7xl mx-auto p-4 my-12 bg-white rounded-md shadow-md">
-    <div class="flex flex-wrap justify-center">
-        <div class="w-full md:w-1/3">
-            <img src="./assets/24.png" class="w-full h-full" />
-        </div>
-        <div class=" p-4 w-full md:w-2/3">
-            <h2 class="text-3xl font-bold mb-4 bg-gray-100 p-2">GROUTING TROWEL (RUBBER FLOAT)</h2>
-            <p class="text-xl mb-4">Made Of High Quality Imported Rubber With High Grip Handle And Flat Bottom To Fill The Joint Completely Of Tiles And Stone. Can Be Used To Fill The Joint With Cement Based As Well Epoxy Based Grout Material. Suitable For Grouting On Floors And On Walls.</p>
-            <ul class="list-disc ml-4">
-                <li class="mb-2 text-lg"><strong>Product</strong>: High Density Flexible Rubber.</li>
-                <li class="mb-2 text-lg"><strong>Packaging</strong>: 1 No.</li>
-                <li><strong>Colour</strong>: White Or Green.</li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="max-w-7xl mx-auto p-4 my-12 bg-white rounded-md shadow-md">
-    <div class="flex flex-wrap justify-center">
-        <div class="w-full md:w-1/3 bg-red-600">
-            <img src="./assets/23.png" class="bg-black w-full h-full"/>
-        </div>
-        <div class=" p-4 w-full md:w-2/3">
-            <h2 class="text-3xl font-bold mb-4 bg-gray-100 p-2">CLEANING SPONGE</h2>
-            <p class="text-xl mb-4">Imported And Made From German High Quality Cellulose And Fiber Material. Perfect Square Shape Sponge For High Grip To Clean The Surface Of Grout Post Application. Retain Enough Water To Clean The Surface Of Grout And Able To Provide Smooth And Levelled Joint. Sed On All Surfaces.</p>
-            <ul class="list-disc ml-4">
-                <li class="mb-2 text-lg"><strong>Product</strong>: High Density Cellulose Sponge.</li>
-                <li class="mb-2 text-lg"><strong>Sponge Thickness</strong>: 2 mm.</li>
-                <li class="mb-2 text-lg"><strong>Size</strong>: 3 mm. Notch For Glass Mosaic Fixing | 6 mm. & 10 mm.</li>
-                <li class="mb-2 text-lg"><strong>Packaging</strong>: 1 No.</li>
-                <li><strong>Colour</strong>: Yellow</li>
-            </ul>
-        </div>
-    </div>
-</div>
 
-<footer id="footer">
-  <div class="bg-red-600 h-60" style="clip-path: polygon(60% 20%, 60% 60%, 60% 60%, 0 100%, 0 60%);margin-bottom: -180px;"></div>
-  <div class="bg-gray-200 p-10 pt-40" style="clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0 100%);">
-  <div class="max-w-7xl mx-auto flex flex-wrap items-center">  
-    <div class="w-full text-center md:text-left md:w-1/2 p-4">  
-      <img src="./assets/22.png" alt="Full Logo" class="max-w-44 md:max-w-60 mb-4 w-full mx-auto md:ml-0" />
-      <p class="text-red-600 text-2xl font-semibold">Future Fixit Industries Private Limited</p>
-      <p class="text-xl">Bambori Ratlam, Madhya Pradesh, <br/>India - 457 001</p>
-      <p class="text-xl">Call: <b><a class="underline" title="Contact Us" href="tel:+918989895919">+91 89898 95919</a></b></p>
-    </div>
-    <div class="w-full text-center md:text-left md:w-1/4 md:border-none border-t-2 border-b-2 pb-4 pt-2 border-red-600">
-      <p class="text-xl font-semibold mb-3">Connect Us On:</p>
-      <div class="flex items-center justify-center md:justify-start">
-        <a href="https://api.whatsapp.com/send?phone=918989895919" title="Connect on Whatsapp"><img src="./assets/icons8-whatsapp-160.png" class="w-10 mr-2"/></a>
-        <a href="https://www.instagram.com/future_fix_it?igsh=YnJ3amI4eHUyOWlv" title="Connect on Instagram"><img src="./assets/instagram_2111463.png" class="w-8" /></a>
+<div class="max-w-7xl mx-auto p-6 my-12 bg-gradient-to-r from-yellow-200 via-blue-200 to-yellow-200 rounded-lg shadow-xl">
+  <div class="flex flex-wrap justify-center items-center">
+      <!-- Image Section -->
+      <div class="w-full md:w-1/2 p-4">
+          <img src="./assets/24.png" class="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
       </div>
-    </div>
-    <div class="w-full md:w-1/4 p-4 md:p-1 flex flex-wrap">
-      <img src="./assets/make-in-india.png" class="object-contain p-4 md:p-2 w-1/2" />
-      <img src="./assets/bharat.png" class="object-contain p-4 md:p-2 w-1/2" />
-    </div>
+      <!-- Product Details Section -->
+      <div class="w-full md:w-1/2 p-6">
+          <h2 class="text-4xl font-extrabold text-gray-800 mb-4 bg-gray-100 p-4 rounded-md shadow-md">GROUTING TROWEL (RUBBER FLOAT)</h2>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">Crafted from high-quality imported rubber with a high-grip handle and flat bottom, this grouting trowel is designed to fill tile and stone joints perfectly. It works effectively with both cement-based and epoxy-based grout materials, ideal for grouting on both floors and walls.</p>
+          <ul class="list-disc ml-4 text-gray-700">
+              <li class="mb-3 text-lg"><strong class="font-semibold text-gray-800">Material</strong>: High Density Flexible Rubber</li>
+              <li class="mb-3 text-lg"><strong class="font-semibold text-gray-800">Packaging</strong>: 1 Piece</li>
+              <li class="text-lg"><strong class="font-semibold text-gray-800">Color</strong>: White or Green</li>
+          </ul>
+      </div>
   </div>
 </div>
 
-  <div class="bg-gray-800 text-white text-center p-4 flex flex-wrap justify-between">
-    <p class="p-2">&copy; 2025 Future Fixit Industries Pvt. Ltd. All rights reserved.</p>
-    <p class="p-2">Deliverd by : <a class="text-blue-300 underline" target="_blank" title="Open Developer Profile" href="https://shivam-giri-resume.netlify.app/">Shivam Giri</a></p>
+<div class="max-w-7xl mx-auto p-6 my-12 bg-gradient-to-r from-lime-200 via-emerald-200 to-orange-200 rounded-lg shadow-xl">
+  <div class="flex flex-wrap justify-center items-center">
+      <!-- Image Section -->
+      <div class="w-full md:w-1/2 p-4 bg-gray-600 rounded-lg shadow-lg">
+          <img src="./assets/23.png" class="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300" />
+      </div>
+      <!-- Product Details Section -->
+      <div class="w-full md:w-1/2 p-6">
+          <h2 class="text-4xl font-extrabold text-gray-800 mb-4 bg-gray-100 p-4 rounded-md shadow-md">CLEANING SPONGE</h2>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">Imported from Germany, this high-quality cellulose and fiber cleaning sponge is designed with a square shape for a firm grip. Perfect for cleaning grout after application, it retains enough water to smooth and level joints. Suitable for use on all surfaces.</p>
+          <ul class="list-disc ml-4 text-gray-700">
+              <li class="mb-3 text-lg"><strong class="font-semibold text-gray-800">Material</strong>: High Density Cellulose Sponge</li>
+              <li class="mb-3 text-lg"><strong class="font-semibold text-gray-800">Sponge Thickness</strong>: 2 mm</li>
+              <li class="mb-3 text-lg"><strong class="font-semibold text-gray-800">Size</strong>: 3 mm (Notch for Glass Mosaic Fixing), 6 mm & 10 mm</li>
+              <li class="mb-3 text-lg"><strong class="font-semibold text-gray-800">Packaging</strong>: 1 Piece</li>
+              <li class="text-lg"><strong class="font-semibold text-gray-800">Color</strong>: Yellow</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+
+<footer id="footer" class="text-white" style="background:url(./assets/wave.png);padding-top: 80px;background-position: top;background-size: cover;background-repeat: no-repeat;">          
+  <div class="relative p-12 text-gray-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+      <div class="text-center md:text-left lg:col-span-1 mb-8 md:mb-0">
+        <img src="./assets/22.png" alt="Future Fixit Logo" class="max-w-44 md:max-w-60 mx-auto md:ml-0 mb-4 p-4 bg-white rounded-lg" />
+        <p class="text-3xl font-semibold text-white mb-4">Future Fixit Industries</p>
+        <p class="text-xl">Bambori Ratlam, Madhya Pradesh, <br/>India - 457 001</p>
+        <p class="text-xl mt-4">Call: <b><a class="underline text-red-400" href="tel:+918989895919">+91 89898 95919</a></b></p>
+
+        <!-- Social Media Links -->
+        <div class="flex justify-center md:justify-start mt-8">
+          <a href="https://api.whatsapp.com/send?phone=918989895919" title="Connect on Whatsapp" class="mr-4">
+            <img src="./assets/icons8-whatsapp-160.png" class="w-12 hover:scale-110 transition-transform duration-200" />
+          </a>
+          <a href="https://www.instagram.com/future_fix_it?igsh=YnJ3amI4eHUyOWlv" title="Connect on Instagram">
+            <img src="./assets/instagram_2111463.png" class="w-10 hover:scale-110 transition-transform duration-200" />
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col items-center lg:items-start space-y-4">
+        <p class="text-3xl font-semibold text-white">About Us</p>
+        <p class="text-lg text-center md:text-left">
+          Future Fixit Industries Pvt. Ltd. is an ISO 9001:2015 certified company. We specialize in a range of construction products including adhesives, grouts, admixtures, and waterproofing solutions.
+        </p>
+        <p class="text-lg text-center md:text-left">
+          Driven by innovation and integrity, we are focused on delivering products that redefine quality standards in the construction industry.
+        </p>
+      </div>
+      <div class="flex justify-center lg:justify-end space-x-8">
+        <img src="./assets/make-in-india.png" class="w-32 object-contain hover:scale-110 transition-all duration-200 bg-white rounded-xl" />
+        <img src="./assets/bharat-2.png" class="w-32 object-contain hover:scale-110 transition-all duration-200 bg-white rounded-xl" />
+      </div>
+    </div>
+  </div>
+  <div class="bg-gray-900 text-white text-center py-8 px-4">
+    <p class="text-lg">&copy; 2025 Future Fixit Industries Pvt. Ltd. All rights reserved.</p>
+    <p class="text-sm mt-2">Developed by: <a class="text-blue-300 underline" target="_blank" href="https://shivam-giri-resume.netlify.app/">Shivam Giri</a></p>
   </div>
 </footer>
 
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const mobileMenuButton = document.querySelector("[aria-controls='mobile-menu']");
-      const mobileMenu = document.getElementById("mobile-menu");
-  
-      if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener("click", function () {
-          const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
-          mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
-          if (isExpanded) {
-            mobileMenu.classList.add("hidden");
-          } else {
-            mobileMenu.classList.remove("hidden");
-          }
-        });
-      }
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuButton = document.querySelector("[aria-controls='mobile-menu']");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener("click", function () {
+        const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
+        
+        // Toggle the aria-expanded attribute for accessibility
+        mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
+
+        // Toggle the menu's visibility and animations
+        if (isExpanded) {
+          mobileMenu.classList.remove("menu-slide-in");
+          mobileMenu.classList.add("menu-slide-out");
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        } else {
+          mobileMenu.classList.remove("hidden", "menu-slide-out");
+          mobileMenu.classList.add("menu-slide-in");
+          menuIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+        }
+      });
+    }
+  });
   </script>
 </body>
 </html>

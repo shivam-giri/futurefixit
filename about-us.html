@@ -7,29 +7,21 @@
   <link rel="shortcut icon" type="image/x-icon" href="./assets//og-logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .hexagon {
-        /* width: 200px;
-        height: 200px; */
-        background-color: #11121214;
-        display: inline-block;
-        position: relative;
-        margin: 14.43px 4px;
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        border: 6px solid #dc2626;
+    #mobile-menu {
+      transition: 0.4s all ease-in-out;
+      position: absolute;
+      width: 100%;
     }
-    .hexagon span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        color: #dc2626;
-        font-weight: bold;
-        /* font-size: 16px; */
-        text-align: center;
+    .menu-slide-out{
+    left: -100%;
+    }
+    .menu-slide-in{
+      left: 0;
+      transition: 0.4s all ease-in-out;
     }
   </style>
 </head>
-<body class="bg-gray-100 font-sans antialiased">
+<body class="bg-white font-sans antialiased">
 
 <header id="header" class="fixed top-0 left-0 w-full z-10">
     <nav class="p-4 backdrop-blur-md bg-white/50">
@@ -40,23 +32,23 @@
             <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                 <span class="absolute -inset-0.5"></span>
                 <span class="sr-only">Open main menu</span>
-                <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <svg id="menu-icon" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
-                <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                <svg id="close-icon" class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
             </button>
             </div>
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <a href="./index.html" class="flex shrink-0 items-center">
-                <img class="h-20 w-auto" src="./assets/logo.png" alt="Your Company">
+                <img class="h-14 md:h-20 w-auto" src="./assets/logo.png" alt="Your Company">
             </a>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div class="hidden sm:ml-6 sm:flex items-center">
                     <div class="flex items-center space-x-1 md:space-x-6">
-                    <a href="javascript:;" class="rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium bg-gray-700 text-white">About us</a>
+                    <a href="javascript:;" class="rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium bg-gray-700 text-white">About Us</a>
                     <a href="./products.html" class="rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Products</a>
                     <a href="./tools.html" class="rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Tools</a>
                     <a href="./contact-us.html" class="rounded-md px-4 py-3 text-lg font-medium text-white bg-red-700 hover:bg-gray-700 hover:text-white">Contact Us</a>
@@ -67,7 +59,7 @@
         </div>
     
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden hidden" id="mobile-menu">
+        <div id="mobile-menu" class="menu-slide-out backdrop-blur-md bg-white/70 mt-4 p-4 shadow-xl">
             <div class="space-y-1 px-2 pb-3 pt-12">
                 <a href="javascript:;" class="block rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-white bg-gray-900">About Us</a>
                 <a href="./products.html" class="block rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700" aria-current="page">Products</a>
@@ -92,46 +84,46 @@
   </div>
 <!-- banner  -->
 
+<section class="max-w-7xl mx-auto px-4 py-12">
+  <p class="text-gray-700 leading-relaxed mb-6 text-xl md:text-2xl">
+    <strong class="text-red-600">Future Fixit Industries Private Limited</strong> is considered as one of the leading suppliers of construction products in India. 
+    <strong class="text-red-600">Future Fixit Industries Private Limited</strong> is an ISO 9001:2015 certified company. Future Fixit’s fastest growing Indian company in the field of construction product with the brand name of Future Fixit. Our product range includes construction products such as epoxy grout, adhesives, admixtures, and other formulations for applications like grouting, fixing tiles, stones, waterproofing, etc.
+  </p>
+  <p class="text-gray-700 leading-relaxed mb-6 text-xl">
+    Cooperation on an equal balance: transparency, mutual trust, and fairness define the business relationship between Future Fixit and its partners. In the spirit of the Chairman, these values are at the core of every company's decision and every action. For mutual success today and in the future.
+  </p>
 
-    <section class="max-w-7xl mx-auto px-4 py-8">
-        <p class="text-gray-700 leading-relaxed mb-6 text-3xl">
-        <strong class="text-red-600">Future Fixit Industries Private Limited</strong> is considered as one of the leading supplier of construction products in India. 
-        <strong class="text-red-600">Future Fixit Industries Private Limited</strong> is an ISO 9001:2015 certified company. Future Fixit’s fastest growing Indian company in the field of construction product with the brand name of Future Fixit. Our product range of construction products such as epoxy grout, adhesives, admixtures, and other formulations applications like grouting, fixing of tiles, stones, waterproofing etc.
-        </p>
-        <p class="text-gray-700 leading-relaxed mb-6 text-xl">
-        Cooperation on an equal balance: transparency, mutual trust, and fairness define the business relationship between Future Fixit and its partners. In the spirit of the Chairman, these values are at the core of every company's decision and every action. For mutual success today and in the future.
-        </p>
+  <div class="grid gap-8 sm:grid-cols-1 lg:grid-cols-2">
+    <!-- Founder & CEO Card -->
+    <div class="bg-white p-6 shadow-xl rounded-lg transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+      <img
+        class="w-32 h-32 mx-auto rounded-full object-cover mb-6 border-4 border-red-600 shadow-md transition-all duration-300"
+        src="./assets/vasudev-ceo.png"
+        alt="Founder & CEO"
+      />
+      <h3 class="text-center text-2xl font-semibold text-red-600">Founder & CEO</h3>
+      <h4 class="text-center text-xl font-bold text-gray-700 mt-2">Vasudev Patidar</h4>
+      <p class="text-gray-600 text-lg mt-4 leading-relaxed">
+        Future Fixit Industries Private Limited is a leading manufacturer of advanced adhesives, grouts, cements, wall putty, waterproofing chemicals, and tile and stone cleaners in India. The company was founded by Vasudev Pandey with a vision to redefine the modern Indian industrial revolution. Future Fixit’s commitment to innovation, research, and development has led to the creation of truly unique products with exceptional global impact.
+      </p>
+    </div>
 
-        <div class="grid gap-8 sm:grid-cols-1 lg:grid-cols-2">
-        <!-- Founder & CEO Card -->
-        <div class="bg-white p-4 shadow-lg rounded-lg">
-            <img
-            class="w-32 h-32 mx-auto rounded-full object-cover mb-4"
-            src="./assets/vasudev-ceo.png"
-            alt="Founder & CEO"
-            />
-            <h3 class="text-center text-2xl font-semibold text-red-600">Founder & CEO</h3>
-            <h4 class="text-center text-xl font-bold text-gray-600">Vasudev Patidar</h4>
-            <p class="text-gray-600 text-lg mt-4 leading-relaxed">
-            Future Fixit Industries Private Limited is a leading manufacturer of advanced adhesives, grouts, cements, wall putty, waterproofing chemicals, and tile and stone cleaners in India. The company was founded by Vasudev Pandey with a vision to redefine the modern Indian industrial revolution. Future Fixit’s private limited commitment to innovation, research, and development has led to the creation of truly unique products with exceptional global impact.
-            </p>
-        </div>
+    <!-- Director of Business Operations Card -->
+    <div class="bg-white p-6 shadow-xl rounded-lg transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+      <img
+        class="w-32 h-32 mx-auto rounded-full object-cover mb-6 border-4 border-red-600 shadow-md transition-all duration-300"
+        src="./assets/yogendra.png"
+        alt="Director of Business Operations"
+      />
+      <h3 class="text-center text-2xl font-semibold text-red-600">Director - Business & Operations</h3>
+      <h4 class="text-center text-xl font-bold text-gray-700 mt-2">Yogendra Verma</h4>
+      <p class="text-gray-600 text-lg mt-4 leading-relaxed">
+        Company director of business and operations, Yogendra Verma, has over 20 years of experience. Yogendra handles all aspects of sales operations besides support functions essential to sales force productivity and efficiency. These accountabilities include business planning, market research, and sales process engineering.
+      </p>
+    </div>
+  </div>
+</section>
 
-        <!-- Director of Business Operations Card -->
-        <div class="bg-white p-4 shadow-lg rounded-lg">
-            <img
-            class="w-32 h-32 mx-auto rounded-full object-cover mb-4"
-            src="./assets/yogendra.png"
-            alt="Director of Business Operations"
-            />
-            <h3 class="text-center text-2xl font-semibold text-red-600">Director - Business & Operations</h3>
-            <h4 class="text-center text-xl font-bold text-gray-600">Yogendra Verma</h4>
-            <p class="text-gray-600 text-lg mt-4 leading-relaxed">
-            Company director of business and operations run by Yogendra Verma has over the experience of 20 years. Yogendra handles all aspects of sales operations besides support functions essential to sales force productivity, efficiency. These accountabilities include Business Planning, Market-research, sales process engineering.
-            </p>
-        </div>
-        </div>
-    </section>
 
     <section class="max-w-7xl mx-auto px-4 py-8">
         <h2 class="text-4xl font-bold text-gray-800 mb-6 text-2xl">Our Vision & Mission</h2>
@@ -189,86 +181,414 @@
     <section class="max-w-7xl mx-auto px-4 py-8">
     <h2 class="text-4xl font-bold text-gray-800 mb-6 text-2xl">Future Fixit Technology</h2>
     <div class="flex justify-center">
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 sm:gap-2 gap-1">
-          <!-- 30 Hexagon Boxes -->
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>FASTER SURFACE REACTION</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>STAIN GUARD</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>SKIN SAFE</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>PURE WHITE</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>SHINE PROTECTOR</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>100% SURFACE CLEAN</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>GLASS BEADS</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>SHNY GLITTERS</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>WATER RESISTANT</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>HIGH GRIP</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>HIGH PERFORMANCE</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>HEAVY DUTY</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>HIGH FLEXIBLE TECHNOLOGY</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>CRYSTAL CLEAR TECHNOLOGY</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>EXTRA GLOSS</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>ABRASION RESISTANCE</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>NO WATER CURING</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>FINE PARTICLE SIZE</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>SUPER CLEANING THERMAL SHOCK FORMULA</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>TRANSPARENT</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>RESISTANT</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>NO CRACKS & SHRINKAGE</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>GOOD COVERAGE</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>POLYMER</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>SHINY GLITTERS</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>RECYCLED RAW MATERIAL</span></div>
-          <div class="hexagon w-full h-full min-h-44 sm:text-sm"><span>Many More....</span></div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4">
+        <!-- Card Boxes -->
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">⚡</div>
+            <span class="text">FASTER SURFACE REACTION</span>
+          </div>
         </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🛡️</div>
+            <span class="text">STAIN GUARD</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🌿</div>
+            <span class="text">SKIN SAFE</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">⚪</div>
+            <span class="text">PURE WHITE</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">✨</div>
+            <span class="text">SHINE PROTECTOR</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🧼</div>
+            <span class="text">100% SURFACE CLEAN</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">💎</div>
+            <span class="text">GLASS BEADS</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🌟</div>
+            <span class="text">SHINY GLITTERS</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">💧</div>
+            <span class="text">WATER RESISTANT</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🤝</div>
+            <span class="text">HIGH GRIP</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🚀</div>
+            <span class="text">HIGH PERFORMANCE</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🔧</div>
+            <span class="text">HEAVY DUTY</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🔗</div>
+            <span class="text">HIGH FLEXIBLE TECHNOLOGY</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🔮</div>
+            <span class="text">CRYSTAL CLEAR TECHNOLOGY</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🌈</div>
+            <span class="text">EXTRA GLOSS</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🛠️</div>
+            <span class="text">ABRASION RESISTANCE</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🚿</div>
+            <span class="text">NO WATER CURING</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🪶</div>
+            <span class="text">FINE PARTICLE SIZE</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🔥</div>
+            <span class="text">SUPER CLEANING THERMAL SHOCK FORMULA</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🔍</div>
+            <span class="text">TRANSPARENT</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">🧱</div>
+            <span class="text">RESISTANT</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">❌</div>
+            <span class="text">NO CRACKS & SHRINKAGE</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">📏</div>
+            <span class="text">GOOD COVERAGE</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">⚗️</div>
+            <span class="text">POLYMER</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">♻️</div>
+            <span class="text">RECYCLED RAW MATERIAL</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="icon">➕</div>
+            <span class="text">MANY MORE...</span>
+          </div>
+        </div>
+      </div>
+      
+      <style>
+        /* Grid Styling */
+        .grid {
+          display: grid;
+          gap: 1rem;
+        }
+      
+        /* Card Design */
+        .card {
+          background: linear-gradient(135deg, #6a11cb, #2575fc);
+          border-radius: 12px;
+          padding: 1rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          min-height: 120px;
+        }
+      
+        .card:hover {
+          transform: translateY(-8px) scale(1.05);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+      
+        .card-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: #fff;
+          gap: 0.5rem;
+        }
+      
+        .icon {
+          font-size: 2rem;
+        }
+      
+        .text {
+          font-size: 0.9rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 1.2;
+        }
+      
+        @media (min-width: 768px) {
+          .text {
+            font-size: 1rem;
+          }
+        }
+      
+        @media (min-width: 1024px) {
+          .text {
+            font-size: 1.1rem;
+          }
+        }
+      </style>
+      
+      
+      <style>
+        /* Grid Styling */
+        .grid {
+          display: grid;
+          gap: 1rem;
+        }
+      
+        /* Card Design */
+        .card {
+          background: linear-gradient(135deg, #0078d4, #00c6fb);
+          border-radius: 12px;
+          padding: 1rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+      
+        .card:hover {
+          transform: translateY(-8px) scale(1.05);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+      
+        .card-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: #fff;
+          gap: 0.5rem;
+        }
+      
+        .icon {
+          font-size: 2rem;
+        }
+      
+        .text {
+          font-size: 0.9rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 1.2;
+        }
+      
+        @media (min-width: 768px) {
+          .text {
+            font-size: 1rem;
+          }
+        }
+      
+        @media (min-width: 1024px) {
+          .text {
+            font-size: 1.1rem;
+          }
+        }
+      </style>
+      
+      
+      <style>
+        .hexagon-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        }
+      
+        .hexagon {
+          position: relative;
+          width: 100px;
+          height: 58px;
+          background-color: #0078d4;
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-weight: bold;
+          text-align: center;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+      
+        .hexagon:hover {
+          transform: translateY(-10px) scale(1.05);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+      
+        .hexagon-text {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+      
+        @media (min-width: 768px) {
+          .hexagon {
+            width: 120px;
+            height: 70px;
+          }
+          .hexagon-text {
+            font-size: 14px;
+          }
+        }
+      
+        @media (min-width: 1024px) {
+          .hexagon {
+            width: 140px;
+            height: 80px;
+          }
+          .hexagon-text {
+            font-size: 16px;
+          }
+        }
+      </style>
+      
     </div>
     </section>
 
-    <footer id="footer">
-      <div class="bg-red-600 h-60" style="clip-path: polygon(60% 20%, 60% 60%, 60% 60%, 0 100%, 0 60%);margin-bottom: -180px;"></div>
-      <div class="bg-gray-200 p-10 pt-40" style="clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0 100%);">
-      <div class="max-w-7xl mx-auto flex flex-wrap items-center">  
-        <div class="w-full text-center md:text-left md:w-1/2 p-4">  
-          <img src="./assets/22.png" alt="Full Logo" class="max-w-44 md:max-w-60 mb-4 w-full mx-auto md:ml-0" />
-          <p class="text-red-600 text-2xl font-semibold">Future Fixit Industries Private Limited</p>
-          <p class="text-xl">Bambori Ratlam, Madhya Pradesh, <br/>India - 457 001</p>
-          <p class="text-xl">Call: <b><a class="underline" title="Contact Us" href="tel:+918989895919">+91 89898 95919</a></b></p>
-        </div>
-        <div class="w-full text-center md:text-left md:w-1/4 md:border-none border-t-2 border-b-2 pb-4 pt-2 border-red-600">
-          <p class="text-xl font-semibold mb-3">Connect Us On:</p>
-          <div class="flex items-center justify-center md:justify-start">
-            <a href="https://api.whatsapp.com/send?phone=918989895919" title="Connect on Whatsapp"><img src="./assets/icons8-whatsapp-160.png" class="w-10 mr-2"/></a>
-            <a href="https://www.instagram.com/future_fix_it?igsh=YnJ3amI4eHUyOWlv" title="Connect on Instagram"><img src="./assets/instagram_2111463.png" class="w-8" /></a>
+    
+    <footer id="footer" class="text-white" style="background:url(./assets/wave.png);padding-top: 80px;background-position: top;background-size: cover;background-repeat: no-repeat;">          
+      <div class="relative p-12 text-gray-300">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+          <div class="text-center md:text-left lg:col-span-1 mb-8 md:mb-0">
+            <img src="./assets/22.png" alt="Future Fixit Logo" class="max-w-44 md:max-w-60 mx-auto md:ml-0 mb-4 p-4 bg-white rounded-lg" />
+            <p class="text-3xl font-semibold text-white mb-4">Future Fixit Industries</p>
+            <p class="text-xl">Bambori Ratlam, Madhya Pradesh, <br/>India - 457 001</p>
+            <p class="text-xl mt-4">Call: <b><a class="underline text-red-400" href="tel:+918989895919">+91 89898 95919</a></b></p>
+    
+            <!-- Social Media Links -->
+            <div class="flex justify-center md:justify-start mt-8">
+              <a href="https://api.whatsapp.com/send?phone=918989895919" title="Connect on Whatsapp" class="mr-4">
+                <img src="./assets/icons8-whatsapp-160.png" class="w-12 hover:scale-110 transition-transform duration-200" />
+              </a>
+              <a href="https://www.instagram.com/future_fix_it?igsh=YnJ3amI4eHUyOWlv" title="Connect on Instagram">
+                <img src="./assets/instagram_2111463.png" class="w-10 hover:scale-110 transition-transform duration-200" />
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col items-center lg:items-start space-y-4">
+            <p class="text-3xl font-semibold text-white">About Us</p>
+            <p class="text-lg text-center md:text-left">
+              Future Fixit Industries Pvt. Ltd. is an ISO 9001:2015 certified company. We specialize in a range of construction products including adhesives, grouts, admixtures, and waterproofing solutions.
+            </p>
+            <p class="text-lg text-center md:text-left">
+              Driven by innovation and integrity, we are focused on delivering products that redefine quality standards in the construction industry.
+            </p>
+          </div>
+          <div class="flex justify-center lg:justify-end space-x-8">
+            <img src="./assets/make-in-india.png" class="w-32 object-contain hover:scale-110 transition-all duration-200 bg-white rounded-xl" />
+            <img src="./assets/bharat-2.png" class="w-32 object-contain hover:scale-110 transition-all duration-200 bg-white rounded-xl" />
           </div>
         </div>
-        <div class="w-full md:w-1/4 p-4 md:p-1 flex flex-wrap">
-          <img src="./assets/make-in-india.png" class="object-contain p-4 md:p-2 w-1/2" />
-          <img src="./assets/bharat.png" class="object-contain p-4 md:p-2 w-1/2" />
-        </div>
       </div>
-    </div>
-  
-      <div class="bg-gray-800 text-white text-center p-4 flex flex-wrap justify-between">
-        <p class="p-2">&copy; 2025 Future Fixit Industries Pvt. Ltd. All rights reserved.</p>
-        <p class="p-2">Deliverd by : <a class="text-blue-300 underline" target="_blank" title="Open Developer Profile" href="https://shivam-giri-resume.netlify.app/">Shivam Giri</a></p>
+      <div class="bg-gray-900 text-white text-center py-8 px-4">
+        <p class="text-lg">&copy; 2025 Future Fixit Industries Pvt. Ltd. All rights reserved.</p>
+        <p class="text-sm mt-2">Developed by: <a class="text-blue-300 underline" target="_blank" href="https://shivam-giri-resume.netlify.app/">Shivam Giri</a></p>
       </div>
     </footer>
     
+    
+    
+    
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const mobileMenuButton = document.querySelector("[aria-controls='mobile-menu']");
-          const mobileMenu = document.getElementById("mobile-menu");
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuButton = document.querySelector("[aria-controls='mobile-menu']");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", function () {
+      const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
       
-          if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener("click", function () {
-              const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
-              mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
-              if (isExpanded) {
-                mobileMenu.classList.add("hidden");
-              } else {
-                mobileMenu.classList.remove("hidden");
-              }
-            });
-          }
-        });
+      // Toggle the aria-expanded attribute for accessibility
+      mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
+
+      // Toggle the menu's visibility and animations
+      if (isExpanded) {
+        mobileMenu.classList.remove("menu-slide-in");
+        mobileMenu.classList.add("menu-slide-out");
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        mobileMenu.classList.remove("hidden", "menu-slide-out");
+        mobileMenu.classList.add("menu-slide-in");
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      }
+    });
+  }
+});
       </script>
 </body>
 </html>

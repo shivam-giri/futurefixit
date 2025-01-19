@@ -7,24 +7,27 @@
   <link rel="shortcut icon" type="image/x-icon" href="./assets//og-logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .clip-hexagon {
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    #mobile-menu {
+      transition: 0.4s all ease-in-out;
+      position: absolute;
+      width: 100%;
+    }
+    .menu-slide-out{
+    left: -100%;
+    }
+    .menu-slide-in{
+      left: 0;
+      transition: 0.4s all ease-in-out;
     }
     .circle {
-      margin: 20px;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: linear-gradient(0deg, rgba(0, 255, 217, 0.4) 50%, transparent 0%), 
-                linear-gradient(45deg, rgba(0, 128, 0, 0.4) 50%, transparent 0%), 
-                linear-gradient(90deg, rgba(11, 255, 0, 0.4) 50%, transparent 0%), 
-                linear-gradient(135deg, pink 50%, transparent 0%), 
-                linear-gradient(180deg, brown 50%, transparent 0%),
-                linear-gradient(225deg, yellow 50%, transparent 0%),
-                linear-gradient(270deg, red 50%, transparent 0%);
-      position: relative;
-      overflow: hidden;
-    }
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(0, 255, 217, 0.4) 50%, transparent 0%), linear-gradient(45deg, rgba(0, 128, 0, 0.4) 50%, transparent 0%), linear-gradient(90deg, rgba(11, 255, 0, 0.4) 50%, transparent 0%), linear-gradient(135deg, pink 50%, transparent 0%), linear-gradient(180deg, brown 50%, transparent 0%), linear-gradient(225deg, yellow 50%, transparent 0%), linear-gradient(270deg, red 50%, transparent 0%);
+    position: relative;
+    overflow: hidden;
+}
   </style>
 </head>
 <body class="bg-white font-sans antialiased">
@@ -35,20 +38,20 @@
         <div class="relative flex h-auto items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <!-- Mobile menu button-->
-            <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <button id="menu-button" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                 <span class="absolute -inset-0.5"></span>
                 <span class="sr-only">Open main menu</span>
-                <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <svg id="menu-icon" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
-                <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                <svg id="close-icon" class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
             </button>
             </div>
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <a href="./index.html" class="flex shrink-0 items-center">
-                <img class="h-20 w-auto" src="./assets/logo.png" alt="Your Company">
+                <img class="h-14 md:h-20 w-auto" src="./assets/logo.png" alt="Your Company">
             </a>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -65,9 +68,9 @@
         </div>
     
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden hidden" id="mobile-menu">
+        <div id="mobile-menu" class="menu-slide-out backdrop-blur-md bg-white/70 mt-4 p-4 shadow-xl">
             <div class="space-y-1 px-2 pb-3 pt-2">
-                <a href="./about-us.html" class="block rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700" aria-current="page">About us</a>
+                <a href="./about-us.html" class="block rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700" aria-current="page">About Us</a>
                 <a href="javascript:;" class="block rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-white bg-gray-900">Products</a>
                 <a href="./tools.html" class="block rounded-md px-3 py-2 md:px-2 md:py-1 text-lg font-medium text-gray-700">Tools</a>
                 <a href="./contact-us.html" class="block rounded-md px-4 py-3 text-center text-lg font-medium text-white bg-red-700">Contact Us</a>
@@ -92,10 +95,11 @@
 <!-- banner  -->
 
 <section class="mt-16">
-    <p class="text-2xl p-10 max-w-7xl mx-auto text-center "><b>Future Fixit</b> Industries Private Limited is a leading supplier of <b>high-quality construction products in India</b> and an ISO 9001:2015 certified company. Renowned for its innovative and durable solutions, the company offers a wide range of products, including tile adhesives, grouts, waterproofing solutions, and construction chemicals, designed to meet the diverse needs of modern construction. With a strong commitment to quality, sustainability, and customer satisfaction, Future Fixit products are trusted by professionals for both residential and commercial projects. Explore our product range to experience unmatched performance and reliability, making every construction project efficient, durable, and long-lasting.</p>
+    <p class="text-xl md:text-2xl p-10 max-w-7xl mx-auto text-center "><b>Future Fixit</b> Industries Private Limited is a leading supplier of <b>high-quality construction products in India</b> and an ISO 9001:2015 certified company. Renowned for its innovative and durable solutions, the company offers a wide range of products, including tile adhesives, grouts, waterproofing solutions, and construction chemicals, designed to meet the diverse needs of modern construction. With a strong commitment to quality, sustainability, and customer satisfaction, Future Fixit products are trusted by professionals for both residential and commercial projects. Explore our product range to experience unmatched performance and reliability, making every construction project efficient, durable, and long-lasting.</p>
+
 
  <!-- product 1 -->
-  <div class="border-b-2 border-red-300">
+  <div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
         <div>
@@ -105,21 +109,21 @@
         <img src="./assets/tools/tool-1.png" alt="Tile Adhesive tool" class="w-full max-w-xs min-w-sm" />
       </div>
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Lite Series</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-orange-200 via-amber-100 to-amber-50 p-3 rounded-sm">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Lite Series</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit Tile Adhesive</strong> is an eco-friendly, lightweight, polymer-modified, mineral-based ready-to-use adhesive for fixing small-size absorbent small ceramic tiles & vitrified in internal areas for renovation as well as fresh work. Future Fixit LS-111 Adhesive is designed for doing small work with speed and ease. Suitable for internal use only.
         </p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-orange-200 to-amber-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <p class="text-gray-600"><span class="bg-[#71716f] h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-orange-200 to-amber-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">20 Kg./40 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-orange-200 to-amber-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Wall, Floor, Interior Dry Area Work Tops</p>
           </div>
@@ -159,24 +163,24 @@
   </div>
  <!-- product 1 -->
  <!-- product 2 -->
- <div class="border-b-2 border-red-300">
+ <div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 grid-flow-row lg:grid-cols-3 grid-col gap-6 items-center py-10">
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Lite Series +</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-green-200 via-green-100 to-green-50 p-3 rounded-sm">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Lite Series +</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit </strong>Tile Adhesive Is An Eco Friendly, Light Weight, Polymer Modified, Mineral Based Ready To Use Adhesive For Fixing Small Size Absorbent Small Stone & Vitrified In Internal & Exterior Area For Renovation As Well As Fresh Work. Future Fixit LS-222 Designed For Doing Small Work With Speed And Ease. Suitable For Internal & Exterior.
         </p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-green-200 to-green-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <p class="text-gray-600"><span class="bg-[#71716f] h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-green-200 to-green-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">20 Kg./40 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-green-200 to-green-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Wall, Floor, Interior & Exterior, Dry Area Work Tops</p>
           </div>
@@ -223,7 +227,7 @@
   </div>
 <!-- product 2 -->
 <!-- product 3 -->
-  <div class="border-b-2 border-red-300">
+  <div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
         <div>
@@ -233,24 +237,24 @@
         <img src="./assets/tools/tool-3.png" alt="Tile Adhesive tool" class="w-full max-w-xs min-w-sm" />
       </div>
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Classic Series</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-purple-200 via-purple-100 to-purple-50 p-3 rounded-sm">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Classic Series</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit </strong>An Eco Friendly, High Polymer Modified, Light Weight, Based On High-quality Minerals, Ready To Use Adhesive For Fixing Stone, Vitrified Tile In The Interior, Exterior And All Types Of Absorbent Ceramic, Porcelain, Glazed And Other Tile In The Interior & Exterior.
         </p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-purple-200 to-purple-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-[#71716f] border-2 h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
                 <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-purple-200 to-purple-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">20 Kg./40 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-purple-200 to-purple-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Wall, Floor, Interior & Exterior, Dry Area Work Tops</p>
           </div>
@@ -304,27 +308,27 @@
 <!-- product 3 -->
 
 <!-- product 4 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Premium Series</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-rose-200 via-red-rose to-rose-50 p-3 rounded-sm">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Premium Series</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit </strong>An Eco Friendly, High Polymer Modified, Light Weight, Based On High-quality Minerals, Ready To Use Adhesive For Fixing Stone, Vitrified Tile In The Interior, Exterior And All Types Of Absorbent Ceramic, Porcelain, Glazed And Other Tile In The Interior & Exterior.
         </p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-rose-200 to-rose-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-[#71716f] border-2 h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
                 <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-rose-200 to-rose-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">20 Kg./40 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-rose-200 to-rose-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Wall, Floor, Interior & Exterior, Dry Area Work Tops</p>
           </div>
@@ -385,17 +389,17 @@
 <!-- product 4 -->
 
 <!-- product 5 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
         <div>
-        <img src="./assets/18.png" alt="Tile Adhesive Bag" class="w-full max-w-md min-w-sm">
+        <img src="./assets/8.png" alt="Tile Adhesive Bag" class="w-full max-w-md min-w-sm">
           <p class="text-2xl text-center font-semibold text-gray-600 pb-4">ENC2TES1 (European Norms)</p>
         </div>
         <img src="./assets/tools/tool-5.png" alt="Tile Adhesive tool" class="w-full max-w-xs min-w-sm" />
       </div>
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Advance Series</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-emerald-200 via-emerald-100 to-emerald-50 p-3 rounded-sm">TILE ADHESIVE <span class="block text-gray-700 text-2xl">Advance Series</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit </strong>Advance Adhesive Is A Unique Eco-friendly, Very High Polymer Modified, Very High Flexible & Deformable Up To 2.5
           Mm., Light Weight, Based On High Quality
@@ -403,18 +407,18 @@
         </p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-emerald-200 to-emerald-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-[#71716f] border-2 h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
                 <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-emerald-200 to-emerald-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">20 Kg./40 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-emerald-200 to-emerald-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Wall, Floor, Interior & Exterior, Dry Area Work Tops</p>
           </div>
@@ -468,26 +472,30 @@
 <!-- product 5 -->
 
 <!-- product 6 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">BLOCK FIX <span class="block text-gray-700 text-2xl">AAC Block Fix Adhesive</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-gray-200 via-gray-100 to-gray-50 p-3">BLOCK FIX <span class="block text-gray-700 text-2xl">AAC Block Fix Adhesive</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit Block adhesive </strong>
            is an Eco friendly, light weight, polymer modified, mineral based ready to use adhesive for fixing of all kind of AAC (Autoclaved Aerated Concrete) blocks, concrete blocks and other absorbent bricks. Suitable for internal & external.</p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
           <div>
+          <div class="bg-gradient-to-r from-gray-200 to-gray-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-[#71716f] border-2 h-12 w-12 rounded-full mr-3 flex"></span>Grey</p>
             </div>
           </div>
+        </div>
           <div>
+          <div class="bg-gradient-to-r from-gray-200 to-gray-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">40 Kg.</p>
           </div>
-          <div>
+          </div>
+          <div class="bg-gradient-to-r from-gray-200 to-gray-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">
                 adhesive for fixing of all kind of AAC
@@ -537,18 +545,18 @@
 
 
 <!-- product 7 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
         <img src="./assets/17.png" alt="Tile Adhesive Bag" class="w-full max-w-md min-w-sm">
         <img src="./assets/tools/tool-7.png" alt="Tile Adhesive tool" class="w-full max-w-xs min-w-sm" />
       </div>
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">SBR LATEX 900 <span class="block text-gray-700 text-2xl">Designed for waterproofing & repair</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-fuchsia-200 via-fuchsia-100 to-fuchsia-50 p-3">SBR LATEX 900 <span class="block text-gray-700 text-2xl">Designed for waterproofing & repair</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit SBR </strong>Is A Unique Eco-friendly Polymer Liquid Based Synthetic Rubbers To Provide Excellent Compressive & Flexural Strength, High Adhesion To Cement Surfaces When Used As Slurry Coat And Also Act As Water Resistant Coating For Wet Areas. Suitable For Internal And External.
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-fuchsia-200 to-fuchsia-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">1 Ltr, 5 Ltr, 20 Ltr</p>
           </div>
@@ -615,10 +623,10 @@
 
 
 <!-- product 8 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">ADVANCE GROUT ADMIX <span class="block text-gray-700 text-2xl">Designed for Grout Strength</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-indigo-200 via-indigo-100 to-indigo-50 p-3">ADVANCE GROUT ADMIX <span class="block text-gray-700 text-2xl">Designed for Grout Strength</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Advance Grout Admix</strong><br/>Advance Grout Admix Is Specially Designed Latex Admix To Be Used With Sanded & Unsanded Grout.
         </p>
@@ -633,20 +641,27 @@
         </p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
-            <h3 class="text-gray-700 font-medium">Colours Available</h3>
+          <div class="">
+            <div class="bg-gradient-to-r from-indigo-200 to-indigo-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">            
+              <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
             </div>
           </div>
+
+          </div>
           <div>
+          <div class="bg-gradient-to-r from-indigo-200 to-indigo-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">500ml, 1 Lit, 5 Ltr</p>
           </div>
+          </div>
           <div>
+          <div class="bg-gradient-to-r from-indigo-200 to-indigo-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">It Improves The Performance Of Portland Cement Grouts For All Types Of Ceramic Tile, Brick, Marble, Natural Stone And Agglomerate Stone Installations.</p>
           </div>
+        </div>
         </div>
       </div>
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
@@ -659,31 +674,31 @@
 
 
 <!-- product 9-->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
         <img src="./assets/15.png" alt="Tile Adhesive Bag" class="w-full max-w-md min-w-sm">
         <img src="./assets/tools/tool-9.png" alt="Tile Adhesive tool" class="w-full max-w-xs min-w-sm" />
       </div>
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">2 COMPONENT EPOXY <span class="block text-gray-700 text-2xl">Designed for easy apply</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-yellow-200 via-yellow-100 to-yellow-50 p-3">2 COMPONENT EPOXY <span class="block text-gray-700 text-2xl">Designed for easy apply</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Advanced Technology Future Fixit 2 Component</strong> Epoxy Grout Is Consisting of High-quality Transparent Glass Beads, Eco- friendly Resin & Hardeners And High-quality Stable Colour Pigment. The Future Fixit 2 Component Epoxy Grout Provides Excellent
 Workability And Ease Of Work For The Diy Jobs And High-quality Joints Between Tiles & Stone. The Joints Are High Chemical, Stain & Abrasion Resistance. Future Fixit 2 Component Epoxy Grout Doesn't Allow Water To Go Through And Can Be Used For Filling The Tile & Stone Joints Up To 15mm On The Floor & On The Wall.
         </p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-yellow-200 to-yellow-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="circle border-2 h-12 w-12 rounded-full mr-3 flex"></span>23 Colours</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-yellow-200 to-yellow-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">1 Kg./4 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-yellow-200 to-yellow-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Filling The Tile & Stone Joints Upto 15 Mm On Floor & On Wall</p>
           </div>
@@ -733,27 +748,27 @@ Workability And Ease Of Work For The Diy Jobs And High-quality Joints Between Ti
 <!-- product 9 -->
 
 <!-- product 10 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">ADVANCE EPOXY GROUT <span class="block text-gray-700 text-2xl">Designed for Filling Tile Joints</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-cyan-200 via-cyan-100 to-cyan-50 p-3">ADVANCE EPOXY GROUT <span class="block text-gray-700 text-2xl">Designed for Filling Tile Joints</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Advance Epoxy Grout</strong> 
           is Consist Of High Quality Colour Quartz, Eco-Friendly Resin & Hardener. The Advance Epoxy Grout Provide Excellent High Quality Joints Between Tiles & Stone. The Joints Are High Chemical, Stain & Abrasion Resistance. Advance Epoxy Grout Does Not Allow Water To Go Through And Can Be Used For Filling The Tile & Stone Joints Upto 15mm On Floor & On Wall
         </p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-cyan-200 to-cyan-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="circle border-2 h-12 w-12 rounded-full mr-3 flex"></span>23 Colours</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-cyan-200 to-cyan-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">1 Kg./5 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-cyan-200 to-cyan-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600"> Filling The Tile & Stone Joints 3 To 5 Mm On Floor & On Wall</p>
           </div>
@@ -808,30 +823,30 @@ Workability And Ease Of Work For The Diy Jobs And High-quality Joints Between Ti
 
 
 <!-- product 11 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
         <img src="./assets/13.png" alt="Tile Adhesive Bag" class="w-full max-w-md min-w-sm">
         <img src="./assets/tools/tool-11.png" alt="Tile Adhesive tool" class="w-full max-w-xs min-w-sm" />
       </div>
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE GROUT ClASSIC <span class="block text-gray-700 text-2xl">Designed for Grouting</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-teal-200 via-teal-100 to-teal-50 p-3">TILE GROUT ClASSIC <span class="block text-gray-700 text-2xl">Designed for Grouting</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Furture fix TILE GROUT</strong> 
           is An Eco-friendly, Single Component, Polymer Modified, Very Fine & Smooth, Water & Abrasion Resistance, Based On High Quality Mineral, Ready To Use Polymer Grout For Filling The Joints Of Tiles & Stone Upto 3mm. Suitable For Internal & External.</p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-teal-200 to-teal-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="circle border-2 h-12 w-12 rounded-full mr-3 flex"></span>23 Colours</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-teal-200 to-teal-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">1 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-teal-200 to-teal-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600"> Filling The Tile & Stone Joints 3 To 5 mm On Floor & On Wall</p>
           </div>
@@ -877,27 +892,27 @@ Workability And Ease Of Work For The Diy Jobs And High-quality Joints Between Ti
 <!-- product 11 -->
 
 <!-- product 12 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
 
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE GROUT ADVANCE <span class="block text-gray-700 text-2xl">Designed for Grouting</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-emerald-200 via-emerald-100 to-emerald-50 p-3">TILE GROUT ADVANCE <span class="block text-gray-700 text-2xl">Designed for Grouting</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Furture fix TILE GROUT</strong> 
           is An Eco-friendly, Single Component, Polymer Modified, Very Fine & Smooth, Water & Abrasion Resistance, Based On High Quality Mineral, Ready To Use Polymer Grout For Filling The Joints Of Tiles & Stone Upto 12mm. Suitable For Internal & External.</p>
   
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-emerald-200 to-emerald-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="circle border-2 h-12 w-12 rounded-full mr-3 flex"></span>23 Colours</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-emerald-200 to-emerald-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">1 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-emerald-200 to-emerald-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600"> Filling The Tile & Stone Joints 12mm On Floor & On Wall</p>
           </div>
@@ -947,31 +962,31 @@ Workability And Ease Of Work For The Diy Jobs And High-quality Joints Between Ti
 <!-- product 12 -->
 
 <!-- product 13 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
         <img src="./assets/6.png" alt="Tile Adhesive Bag" class="w-full max-w-md min-w-sm">
         <img src="./assets/tools/tool-13.png" alt="Tile Adhesive tool" class="w-full max-w-xs min-w-sm" />
       </div>
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE GROUT ADVANCE <span class="block text-gray-700 text-2xl">Designed for Grouting</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-lime-200 via-lime-100 to-lime-50 p-3">TILE GROUT ADVANCE <span class="block text-gray-700 text-2xl">Designed for Grouting</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit Ultimate PU Adhesive</strong> is A Unique Eco- friendly,very High Flexible (elongation Upto 30 Mm), Two Part Polyurethane System Based On High Quality Minerals For Doing Work On Flexible Surfaces Such As Metal, Wood, Dry-wall, External Facade And Areas Under Heavy Vibration Such As
 Airport & Metro Station Including Heavy Duty
 Industrial Floor. Suitable To Fix All Type Of Ceramic & Vitrified Slab, Natural & Agglomerated Stone Slab & All Kind Of Mosaic Made In Ceramic, Glass, Wood & Metal. Suitable For Internal & External.
         </p>  
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-lime-200 to-lime-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-lime-200 to-lime-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">1 Kg. / 4 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-lime-200 to-lime-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Fix All Kind Of Mosaic Made In Ceramic, Glass, Wood & Metal. Suitable For Internal & External</p>
           </div>
@@ -1025,17 +1040,17 @@ Industrial Floor. Suitable To Fix All Type Of Ceramic & Vitrified Slab, Natural 
 <!-- product 13 -->
 
 <!-- product 14 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
 
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">GLITTERPOXY <span class="block text-gray-700 text-2xl">Hight Shine Glitterpoxy, Designed for Sparking Joint Filling</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-yellow-200 via-stone-100 to-red-200 p-3">GLITTERPOXY <span class="block text-gray-700 text-2xl">Hight Shine Glitterpoxy, Designed for Sparking Joint Filling</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Advance Technology Future Fixit Glitterpoxy Grout</strong> is Consisting Of High-quality Transparent Glass Beads, Eco-friendly Resin & Hardener & Extra Shiny Premium Hexagonal Glitter Beads. The Glitterpoxy Grout Provides Excellent Workability And Ease Of Work For
 The Diy Job And High-quality Shining In Gold, Silver & Copper Shades Between Tiles & Stone Joints. Future Fixit Grout Doesn't Allow Water To Go Through And Can Be Used For Filling The Tile & Stone Joints Up To 10 Mm On Floors & On Walls. Best For Interior Use. External Under Shade.
         </p>  
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-yellow-200 via-stone-100 to-red-200 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-yellow-500 border-2 h-12 w-12 rounded-full mr-3 flex"></span>Gold</p>
@@ -1043,11 +1058,11 @@ The Diy Job And High-quality Shining In Gold, Silver & Copper Shades Between Til
                 <p class="text-gray-600"><span class="bg-orange-700 border-2 h-12 w-12 rounded-full mr-3 flex"></span>Copper</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-yellow-200 via-stone-100 to-red-200 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">1 Kg. / 4 Kg.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-yellow-200 via-stone-100 to-red-200 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Filling the Tile & Stone Joints 15mm on Floor & on Wall</p>
           </div>
@@ -1101,19 +1116,19 @@ The Diy Job And High-quality Shining In Gold, Silver & Copper Shades Between Til
 <!-- product 14 -->
 
 <!-- product 15 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
         <img src="./assets/10.png" alt="Tile Adhesive Bag" class="w-full max-w-md min-w-sm">
         <img src="./assets/tools/tool-15.png" alt="Tile Adhesive tool" class="w-full max-w-xs min-w-sm" />
       </div>
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">HIGHT SHINE GLITTER <span class="block text-gray-700 text-2xl">Designed for Sparking Shining</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-red-200 via-yellow-100 to-stone-100 p-3">HIGHT SHINE GLITTER <span class="block text-gray-700 text-2xl">Designed for Sparking Shining</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit High Shine Gliter</strong> is A Eco-friendly, High Quality, Durable, Chemical Resistance Glitter Powder Based On Polyester Resin To Use Along With Epoxy Grout. The Mix Product Produce Very High Shining Grout Surface In Gold, Silver & Copper Shade. Suitable For Internal.
         </p>  
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-red-200 via-yellow-100 to-stone-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-yellow-500 border-2 h-12 w-12 rounded-full mr-3 flex"></span>Gold</p>
@@ -1121,11 +1136,11 @@ The Diy Job And High-quality Shining In Gold, Silver & Copper Shades Between Til
                 <p class="text-gray-600"><span class="bg-orange-700 border-2 h-12 w-12 rounded-full mr-3 flex"></span>Copper</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-red-200 via-yellow-100 to-stone-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">100 gm bottle</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-red-200 via-yellow-100 to-stone-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">High Shine glitter can use with epoxy Grout</p>
           </div>
@@ -1174,26 +1189,26 @@ The Diy Job And High-quality Shining In Gold, Silver & Copper Shades Between Til
 <!-- product 15 -->
 
 <!-- product 16 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
 
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">TILE SPACER <span class="block text-gray-700 text-2xl">Spacer for the Tile & Stone joint</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-violet-200 via-violet-100 to-violet-50 p-3">TILE SPACER <span class="block text-gray-700 text-2xl">Spacer for the Tile & Stone joint</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
             Made Of High Quality Plastic In Pure White Colour And Of Different Cross Sizes. Most Suitable To Create The Joints Between Tile & Stone While Fixing On Floor And Wall. Can Be Used Between Four Tiles As Insertion Or In Vertical Form Between To Tiles To Remove Later For Reuse. Suitable For Floor And Wall Joints Between Tiles And Stone.
         </p> 
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-violet-200 to-violet-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>White</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-violet-200 to-violet-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">100 Nos.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-violet-200 to-violet-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Suitable For Floor And Wall Joints Between Tiles And Stone</p>
           </div>
@@ -1230,29 +1245,29 @@ The Diy Job And High-quality Shining In Gold, Silver & Copper Shades Between Til
 <!-- product 16 -->
 
 <!-- product 17 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
         <img src="./assets/3.png" alt="Tile Adhesive Bag" class="w-full max-w-md min-w-sm">
         <img src="./assets/tools/tool-17.png" alt="Tile Adhesive tool" class="w-full max-w-xs min-w-sm" />
       </div>
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">PREMIUM TILE CLEAN <span class="block text-gray-700 text-2xl">Designed for tile cleaning</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-pink-200 via-pink-100 to-pink-50 p-3">PREMIUM TILE CLEAN <span class="block text-gray-700 text-2xl">Designed for tile cleaning</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit Tile Clean</strong> is An Ideal Powerful Tile Clean For Daily And Often Use. It Is Based On A High-quality Formulation To Clean The Surface Of Tiles, Sandstone Or Concrete To Remove The Dirt, Soil, Salt Deposits, Mud, Different Stain & Other Particles Completely. Suitable For Internal & External Areas On The Floor And Walls.
         </p> 
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-pink-200 to-pink-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>Transparent</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-pink-200 to-pink-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">1 Ltr. | 5 Ltr.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-pink-200 to-pink-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Suitable For internal and external area on the floor and walls.</p>
           </div>
@@ -1285,26 +1300,26 @@ The Diy Job And High-quality Shining In Gold, Silver & Copper Shades Between Til
 <!-- product 17 -->
 
 <!-- product 18 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
 
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">ADVANCE TILE CLEAN <span class="block text-gray-700 text-2xl">Designed for Stone cleaning</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-indigo-200 via-pink-100 to-green-100 p-3">ADVANCE TILE CLEAN <span class="block text-gray-700 text-2xl">Designed for Stone cleaning</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
           <strong>Future Fixit Tile Clean</strong> is An Ideal Powerful Tile Clean For Daily And Often Use. It Is Based On A High-quality Formulation To Clean The Surface Of Tiles, Sandstone Or Concrete To Remove The Dirt, Soil, Salt Deposits, Mud, Different Stain & Other Particles Completely. Suitable For Internal & External Areas On The Floor And Walls.
         </p> 
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-indigo-200 via-pink-100 to-green-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>Transparent</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-indigo-200 via-pink-100 to-green-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">1 Ltr. | 5 Ltr.</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-indigo-200 via-pink-100 to-green-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Suitable For internal and external area on the floor and walls.</p>
           </div>
@@ -1341,30 +1356,30 @@ The Diy Job And High-quality Shining In Gold, Silver & Copper Shades Between Til
 <!-- product 18 -->
 
 <!-- product 19 -->
-<div class="border-b-2 border-red-300">
+<div class="border-b-4 border-red-500">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center py-10">
       <div class="flex flex-wrap flex-row justify-center items-center order-1 lg:order-none">
         <img src="./assets/wall-putty.png" alt="Tile Adhesive Bag" class="w-full max-w-md min-w-sm">
         <img src="./assets/tools/tool-19.png" alt="Tile Adhesive tool" class="w-full max-w-xs min-w-sm rounded-full" />
       </div>
       <div class="lg:col-span-2 p-3 order-2 lg:order-none">
-        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4">WALL PUTTY <span class="block text-gray-700 text-2xl">Water proof</span></h2>
+        <h2 class="text-red-600 text-3xl font-bold border-l-8 border-gray-600 pl-4 bg-gradient-to-br from-teal-200 via-lime-100 to-indigo-100 p-3">WALL PUTTY <span class="block text-gray-700 text-2xl">Water proof</span></h2>
         <p class="mt-4 text-gray-600 leading-relaxed text-xl">
             It is very important and essential that the application area surface is pre-wet properly before the application of "Future Fixit Wall Putty" during application process. This ensure higher bonding, strenght, easy workability and higher coverage within the surface.
             Generally the cause of efflorescence on the wall surface is due to brick masonry and the quality of bricks, sand and water. If the effect of efflorescence is very high on the brick masonry then proper care should be taken to control the efflorescence. The efflorescence on brick masonry if allowed to exist which will impair the bonding of the "Future Fixit Wall Putty" as is with any other
         </p> 
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xl">
-          <div>
+          <div class="bg-gradient-to-r from-teal-200 via-lime-100 to-indigo-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Colours Available</h3>
             <div class="flex">
                 <p class="text-gray-600"><span class="bg-white border-2 h-12 w-12 rounded-full mr-3 flex"></span>Transparent</p>
             </div>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-teal-200 via-lime-100 to-indigo-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Packing</h3>
             <p class="text-gray-600">20 / 40 Kg</p>
           </div>
-          <div>
+          <div class="bg-gradient-to-r from-teal-200 via-lime-100 to-indigo-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-500 ease-in-out">
             <h3 class="text-gray-700 font-medium">Application Area</h3>
             <p class="text-gray-600">Perfct putty for Interior and Exterior</p>
           </div>
@@ -1376,53 +1391,77 @@ The Diy Job And High-quality Shining In Gold, Silver & Copper Shades Between Til
 
 </section>
 
-<footer id="footer">
-  <div class="bg-red-600 h-60" style="clip-path: polygon(60% 20%, 60% 60%, 60% 60%, 0 100%, 0 60%);margin-bottom: -180px;"></div>
-  <div class="bg-gray-200 p-10 pt-40" style="clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0 100%);">
-  <div class="max-w-7xl mx-auto flex flex-wrap items-center">  
-    <div class="w-full text-center md:text-left md:w-1/2 p-4">  
-      <img src="./assets/22.png" alt="Full Logo" class="max-w-44 md:max-w-60 mb-4 w-full mx-auto md:ml-0" />
-      <p class="text-red-600 text-2xl font-semibold">Future Fixit Industries Private Limited</p>
-      <p class="text-xl">Bambori Ratlam, Madhya Pradesh, <br/>India - 457 001</p>
-      <p class="text-xl">Call: <b><a class="underline" title="Contact Us" href="tel:+918989895919">+91 89898 95919</a></b></p>
-    </div>
-    <div class="w-full text-center md:text-left md:w-1/4 md:border-none border-t-2 border-b-2 pb-4 pt-2 border-red-600">
-      <p class="text-xl font-semibold mb-3">Connect Us On:</p>
-      <div class="flex items-center justify-center md:justify-start">
-        <a href="https://api.whatsapp.com/send?phone=918989895919" title="Connect on Whatsapp"><img src="./assets/icons8-whatsapp-160.png" class="w-10 mr-2"/></a>
-        <a href="https://www.instagram.com/future_fix_it?igsh=YnJ3amI4eHUyOWlv" title="Connect on Instagram"><img src="./assets/instagram_2111463.png" class="w-8" /></a>
+<footer id="footer" class="text-white" style="background:url(./assets/wave.png);padding-top: 80px;background-position: top;background-size: cover;background-repeat: no-repeat;">          
+  <div class="relative p-12 text-gray-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+      <div class="text-center md:text-left lg:col-span-1 mb-8 md:mb-0">
+        <img src="./assets/22.png" alt="Future Fixit Logo" class="max-w-44 md:max-w-60 mx-auto md:ml-0 mb-4 p-4 bg-white rounded-lg" />
+        <p class="text-3xl font-semibold text-white mb-4">Future Fixit Industries</p>
+        <p class="text-xl">Bambori Ratlam, Madhya Pradesh, <br/>India - 457 001</p>
+        <p class="text-xl mt-4">Call: <b><a class="underline text-red-400" href="tel:+918989895919">+91 89898 95919</a></b></p>
+
+        <!-- Social Media Links -->
+        <div class="flex justify-center md:justify-start mt-8">
+          <a href="https://api.whatsapp.com/send?phone=918989895919" title="Connect on Whatsapp" class="mr-4">
+            <img src="./assets/icons8-whatsapp-160.png" class="w-12 hover:scale-110 transition-transform duration-200" />
+          </a>
+          <a href="https://www.instagram.com/future_fix_it?igsh=YnJ3amI4eHUyOWlv" title="Connect on Instagram">
+            <img src="./assets/instagram_2111463.png" class="w-10 hover:scale-110 transition-transform duration-200" />
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col items-center lg:items-start space-y-4">
+        <p class="text-3xl font-semibold text-white">About Us</p>
+        <p class="text-lg text-center md:text-left">
+          Future Fixit Industries Pvt. Ltd. is an ISO 9001:2015 certified company. We specialize in a range of construction products including adhesives, grouts, admixtures, and waterproofing solutions.
+        </p>
+        <p class="text-lg text-center md:text-left">
+          Driven by innovation and integrity, we are focused on delivering products that redefine quality standards in the construction industry.
+        </p>
+      </div>
+      <div class="flex justify-center lg:justify-end space-x-8">
+        <img src="./assets/make-in-india.png" class="w-32 object-contain hover:scale-110 transition-all duration-200 bg-white rounded-xl" />
+        <img src="./assets/bharat-2.png" class="w-32 object-contain hover:scale-110 transition-all duration-200 bg-white rounded-xl" />
       </div>
     </div>
-    <div class="w-full md:w-1/4 p-4 md:p-1 flex flex-wrap">
-      <img src="./assets/make-in-india.png" class="object-contain p-4 md:p-2 w-1/2" />
-      <img src="./assets/bharat.png" class="object-contain p-4 md:p-2 w-1/2" />
-    </div>
   </div>
-</div>
-
-  <div class="bg-gray-800 text-white text-center p-4 flex flex-wrap justify-between">
-    <p class="p-2">&copy; 2025 Future Fixit Industries Pvt. Ltd. All rights reserved.</p>
-    <p class="p-2">Deliverd by : <a class="text-blue-300 underline" target="_blank" title="Open Developer Profile" href="https://shivam-giri-resume.netlify.app/">Shivam Giri</a></p>
+  <div class="bg-gray-900 text-white text-center py-8 px-4">
+    <p class="text-lg">&copy; 2025 Future Fixit Industries Pvt. Ltd. All rights reserved.</p>
+    <p class="text-sm mt-2">Developed by: <a class="text-blue-300 underline" target="_blank" href="https://shivam-giri-resume.netlify.app/">Shivam Giri</a></p>
   </div>
 </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const mobileMenuButton = document.querySelector("[aria-controls='mobile-menu']");
-      const mobileMenu = document.getElementById("mobile-menu");
-  
-      if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener("click", function () {
-          const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
-          mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
-          if (isExpanded) {
-            mobileMenu.classList.add("hidden");
-          } else {
-            mobileMenu.classList.remove("hidden");
-          }
-        });
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuButton = document.querySelector("[aria-controls='mobile-menu']");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", function () {
+      const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
+      
+      // Toggle the aria-expanded attribute for accessibility
+      mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
+
+      // Toggle the menu's visibility and animations
+      if (isExpanded) {
+        mobileMenu.classList.remove("menu-slide-in");
+        mobileMenu.classList.add("menu-slide-out");
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        mobileMenu.classList.remove("hidden", "menu-slide-out");
+        mobileMenu.classList.add("menu-slide-in");
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
       }
     });
-  </script>
+  }
+});
+</script>
+
 </body>
 </html>
